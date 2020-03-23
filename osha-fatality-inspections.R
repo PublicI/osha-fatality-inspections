@@ -93,12 +93,16 @@ inspected_prior %>%
   summarize(num_accidents = n()) %>% 
   arrange(desc(num_accidents))
 
+------------------------------------------------------------
+### Calculating figures only using OSHA-inspected workplaces
+------------------------------------------------------------
+
 # Create lists of states based on whether OSHA conducts some or all of their inspections of non-federal facilities
 osha_states = list("AL", "AR", "AS", "CO", "DC", "DE", "FL", "GA", "GU", "ID", "KS", "LA", "MA", "MO", "MP", "MS", "MT", "ND", "NE", "NH", "OH", "OK", "PA", "RI", "SD", "TX", "UK", "WI", "WV")
 non_osha_states = list("AK", "AZ", "CA", "HI", "IN", "IA", "KY", "MD", "MI", "MN", "NV", "NM", "NC", "OR", "PR", "SC", "TN", "UT", "VT", "VA", "WA", "WY")
 non_osha_states_gov_workers = list("CT", "IL", "ME", "NJ", "NY", "VI")
 
-# Redo the above work with the non-OSHA states excluded
+# Filter to just OSHA-inspected workplaces
 osha_inspections <- inspections %>% 
   filter(owner_type == "D" |
            site_state %in% osha_states |
@@ -170,6 +174,94 @@ osha_inspected_prior %>%
 
 # And how many of these catastrophic/fatal accidents were preceded by an inspection in the prior 10 years?
 osha_inspected_prior %>% 
+  filter(prior_inspection == T) %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+
+----------------------------------------------------
+### Comparing OSHA inspections under Obama and Trump
+----------------------------------------------------
+
+# Obama inspections
+
+# Filter to OSHA inspections just in the last three years of Obama's presidency
+# Trump was inaugurated on January 20, 2017. So filter to inspections conducted between January 21, 2014 and January 20, 2017.
+obama_osha_inspections <- osha_inspections %>% 
+  filter(open_date >= "2014-01-21" & open_date <= "2017-01-20")
+
+# How many different workplaces received a catastrophic/fatality inspection when grouped by address?
+obama_osha_fatality_inspections_by_workplace <- obama_osha_inspections %>% 
+  filter(insp_type == "M") %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""),
+           fatality_insp_date = open_date) %>% 
+  select(estab_address, fatality_insp_date)
+
+# How many different workplaces received any sort of an inspection when grouped by address?
+obama_osha_all_inspections_by_workplace <- obama_osha_inspections %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""),
+           all_insp_date = open_date) %>% 
+  select(estab_address, all_insp_date)
+
+# Join the data frames to see every inspection prior to each workplace's catastrophic/fatal accidents.
+obama_osha_inspected_prior <- inner_join(obama_osha_fatality_inspections_by_workplace, obama_osha_all_inspections_by_workplace, by = "estab_address") %>% 
+  mutate(days_between = time_length(fatality_insp_date - all_insp_date, "day"),
+         prior_inspection = case_when(
+           days_between > 0 ~ T,
+           days_between == 0 ~ F
+         )) %>% 
+  filter(days_between >= 0)
+
+# And how many of these catastrophic/fatal accidents were there?
+obama_osha_inspected_prior %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+
+# And how many of these catastrophic/fatal accidents were preceded by an inspection?
+obama_osha_inspected_prior %>% 
+  filter(prior_inspection == T) %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+
+# Trump inspections
+
+# Filter to OSHA inspections just in the first three years of Trump's presidency
+# Trump was inaugurated on January 20, 2017. So filter to inspections conducted between January 21, 2017 and January 20, 2020.
+trump_osha_inspections <- osha_inspections %>% 
+  filter(open_date >= "2017-01-21" & open_date <= "2020-01-20")
+
+# How many different workplaces received a catastrophic/fatality inspection when grouped by address?
+trump_osha_fatality_inspections_by_workplace <- trump_osha_inspections %>% 
+  filter(insp_type == "M") %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""),
+           fatality_insp_date = open_date) %>% 
+  select(estab_address, fatality_insp_date)
+
+# How many different workplaces received any sort of an inspection when grouped by address?
+trump_osha_all_inspections_by_workplace <- trump_osha_inspections %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""),
+           all_insp_date = open_date) %>% 
+  select(estab_address, all_insp_date)
+
+# Join the data frames to see every inspection prior to each workplace's catastrophic/fatal accidents.
+trump_osha_inspected_prior <- inner_join(trump_osha_fatality_inspections_by_workplace, trump_osha_all_inspections_by_workplace, by = "estab_address") %>% 
+  mutate(days_between = time_length(fatality_insp_date - all_insp_date, "day"),
+         prior_inspection = case_when(
+           days_between > 0 ~ T,
+           days_between == 0 ~ F
+         )) %>% 
+  filter(days_between >= 0)
+
+# And how many of these catastrophic/fatal accidents were there?
+trump_osha_inspected_prior %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+
+# And how many of these catastrophic/fatal accidents were preceded by an inspection?
+trump_osha_inspected_prior %>% 
   filter(prior_inspection == T) %>% 
   distinct(estab_address, fatality_insp_date) %>% 
   summarize(num_accidents = n()) %>% 
