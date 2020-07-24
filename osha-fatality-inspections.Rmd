@@ -1,0 +1,129 @@
+---
+title: "OSHA Fatality Inspections Analysis"
+output: html_notebook
+---
+
+```{r set packages}
+library(lubridate)
+library(tidyverse)
+```
+
+```{r import inspections data}
+
+# Import the inspections data
+inspections <- list.files(path = "data/osha_inspections/", pattern = "*.csv", full.names = T) %>% 
+  # Convert all columns to character type to minimize data type errors
+  lapply(read_csv, col_types = cols(.default = "c", open_date = col_date(), case_mod_date = col_date(), close_conf_date = col_date(), close_case_date = col_date())) %>% 
+  # Concatenate the CSVs
+  bind_rows()
+```
+
+```{r filter to just inspections conducted by OSHA}
+# Filter to just OSHA-inspected workplaces
+
+inspections %>% 
+  mutate(length_of_reporting_id = str_length(reporting_id)) %>% 
+  group_by(length_of_reporting_id) %>% 
+  summarize(num_inspections = n()) %>% 
+  arrange(num_inspections)
+
+osha_inspections <- inspections %>% 
+  filter(reporting_id) 
+```
+
+```{r comparing trump to obama inspections}
+# How many safety inspections did OSHA conduct during the first 3.5 years of Trump's presidency?
+trump_inspections <- osha_inspections %>% 
+  filter(safety_hlth == "S" &  open_date >= "2017-01-20" & open_date < "2020-07-20")
+
+count(trump_inspections)
+
+# How many safety inspections were conducted during the last 3.5 years of Obama's presidency?
+obama_inspections <- osha_inspections %>% 
+  filter(safety_hlth == "S" & open_date >= "2013-07-20" & open_date < "2017-01-20")
+
+count(obama_inspections)
+
+# What's the difference?
+(count(trump_inspections) - count(obama_inspections)) / count(obama_inspections)
+```
+
+```{r calculate the number of fatality/catastrophe inspections each year}
+# Filter the OSHA inspections to only fatality/catastrophe safety inspections
+fat_cat_inspections <- osha_inspections %>% 
+  filter(safety_hlth == "S" & insp_type == "M")
+
+# Group by year
+fat_cat_inspections_by_year <- fat_cat_inspections %>% 
+  filter(open_date >= "2012-01-01") %>% # No fat/cat inspections recorded prior to April 20, 2011 so it wouldn't be fair to compare 2011 to the other years
+  group_by(year = year(open_date)) %>% 
+  summarize(num_fatality_inspections = n()) %>% 
+  arrange(desc(year))
+
+fat_cat_inspections_by_year
+```
+
+```{r calculate the number of workplaces that witnessed a fatality/catastrophic safety accident since January 1, 2013 for which OSHA conducted a prior safety inspection in the decade preceding the accident}
+# How many different workplaces received an OSHA fatality inspection when grouped by address and inspection date?
+osha_fatality_inspections_by_workplace <- fat_cat_inspections %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""), fatality_insp_date = open_date) %>% 
+  select(estab_address, fatality_insp_date)
+
+# How many different workplaces received any sort of OSHA safety inspection when grouped by address?
+osha_all_inspections_by_workplace <- osha_inspections %>% 
+  filter(safety_hlth == "S") %>% 
+  group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""), all_insp_date = open_date) %>% 
+  select(estab_address, all_insp_date)
+
+osha_all_inspections_by_workplace
+
+# Join the data frames to see every safety inspection OSHA conducted prior to each workplace's catastrophic/fatal accidents.
+osha_inspected_prior <- inner_join(osha_fatality_inspections_by_workplace, osha_all_inspections_by_workplace, by = "estab_address") %>% 
+  mutate(days_between = time_length(fatality_insp_date - all_insp_date, "day"),
+         prior_inspection = case_when(
+           days_between > 0 & days_between < 3652.5 ~ T,
+           days_between == 0 | days_between >= 3652.5 ~ F
+           )) %>% 
+  filter(days_between >= 0)
+
+# And how many of these catastrophic/fatal accidents were there?
+osha_inspected_prior %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+
+# And how many of these catastrophic/fatal accidents were preceded by an inspection in the prior 10 years?
+osha_inspected_prior %>% 
+  filter(prior_inspection == T) %>% 
+  distinct(estab_address, fatality_insp_date) %>% 
+  summarize(num_accidents = n()) %>% 
+  arrange(desc(num_accidents))
+```
+
+```{r}
+osha_fatality_inspections_by_workplace %>% 
+  group_by(estab_address) %>% 
+  summarize(num_fat_cat_inspections = n()) %>% 
+  arrange(desc(num_fat_cat_inspections))
+
+osha_inspected_prior %>% 
+  filter(estab_address == "102-0166THROADFORESTHILLSNY11375") %>% 
+  arrange(desc(fatality_insp_date), desc(all_insp_date))
+
+osha_inspections %>% 
+  filter(str_detect(site_address, "102-01 66TH ROAD") & safety_hlth == "S" & insp_type == "M") %>% 
+  arrange(desc(open_date))
+
+osha_inspections %>% 
+  filter(str_detect(site_address, "102-01 66TH ROAD") & safety_hlth == "S") %>% 
+  arrange(desc(open_date))
+```
+
+
+
+```{r how many non-safety (presumably health) inspections has OSHA conducted since COVID began?}
+covid_inspections <- osha_inspections %>% 
+  filter(safety_hlth != "S" & open_date >= "2020-03-13") # White House declared a national emergency on 3/13, retroactively effective on 3/1
+
+count(covid_inspections)
+```
