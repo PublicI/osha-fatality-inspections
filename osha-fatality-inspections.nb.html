@@ -1751,10 +1751,39 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
-<pre class="r"><code>library(lubridate)
-library(tidyverse)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5gYGAifQ== -->
+<pre class="r"><code>library(lubridate)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixbHVicmlkYXRl46S847iyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpiYXNl46S847iyOlxuXG4gICAgZGF0ZSwgaW50ZXJzZWN0LCBzZXRkaWZmLCB1bmlvblxuIn0= -->
+<pre><code>
+Attaching package: 㤼㸱lubridate㤼㸲
+
+The following objects are masked from 㤼㸱package:base㤼㸲:
+
+    date, intersect, setdiff, union</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuLS0gQXR0YWNoaW5nIHBhY2thZ2VzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2UgMS4zLjAgLS1cbnYgZ2dwbG90MiAzLjMuMiAgICAgdiBwdXJyciAgIDAuMy40XG52IHRpYmJsZSAgMy4wLjEgICAgIHYgZHBseXIgICAxLjAuMFxudiB0aWR5ciAgIDEuMS4wICAgICB2IHN0cmluZ3IgMS40LjBcbnYgcmVhZHIgICAxLjMuMSAgICAgdiBmb3JjYXRzIDAuNS4wXG4tLSBDb25mbGljdHMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZV9jb25mbGljdHMoKSAtLVxueCBsdWJyaWRhdGU6OmFzLmRpZmZ0aW1lKCkgbWFza3MgYmFzZTo6YXMuZGlmZnRpbWUoKVxueCBsdWJyaWRhdGU6OmRhdGUoKSAgICAgICAgbWFza3MgYmFzZTo6ZGF0ZSgpXG54IGRwbHlyOjpmaWx0ZXIoKSAgICAgICAgICBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggbHVicmlkYXRlOjppbnRlcnNlY3QoKSAgIG1hc2tzIGJhc2U6OmludGVyc2VjdCgpXG54IGRwbHlyOjpsYWcoKSAgICAgICAgICAgICBtYXNrcyBzdGF0czo6bGFnKClcbnggbHVicmlkYXRlOjpzZXRkaWZmKCkgICAgIG1hc2tzIGJhc2U6OnNldGRpZmYoKVxueCBsdWJyaWRhdGU6OnVuaW9uKCkgICAgICAgbWFza3MgYmFzZTo6dW5pb24oKVxuIn0= -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+-- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+v ggplot2 3.3.2     v purrr   0.3.4
+v tibble  3.0.1     v dplyr   1.0.0
+v tidyr   1.1.0     v stringr 1.4.0
+v readr   1.3.1     v forcats 0.5.0
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x lubridate::as.difftime() masks base::as.difftime()
+x lubridate::date()        masks base::date()
+x dplyr::filter()          masks stats::filter()
+x lubridate::intersect()   masks base::intersect()
+x dplyr::lag()             masks stats::lag()
+x lubridate::setdiff()     masks base::setdiff()
+x lubridate::union()       masks base::union()</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1772,24 +1801,12 @@ inspections &lt;- list.files(path = &quot;data/osha_inspections/&quot;, pattern 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zcGVjdGlvbnMgJT4lIFxuICBtdXRhdGUobGVuZ3RoX29mX3JlcG9ydGluZ19pZCA9IHN0cl9sZW5ndGgocmVwb3J0aW5nX2lkKSkgJT4lIFxuICBncm91cF9ieShsZW5ndGhfb2ZfcmVwb3J0aW5nX2lkKSAlPiUgXG4gIHN1bW1hcml6ZShudW1faW5zcGVjdGlvbnMgPSBuKCkpICU+JSBcbiAgYXJyYW5nZShudW1faW5zcGVjdGlvbnMpXG5cbmBgYCJ9 -->
-<pre class="r"><code>inspections %&gt;% 
-  mutate(length_of_reporting_id = str_length(reporting_id)) %&gt;% 
-  group_by(length_of_reporting_id) %&gt;% 
-  summarize(num_inspections = n()) %&gt;% 
-  arrange(num_inspections)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGaWx0ZXIgdG8ganVzdCBPU0hBLWluc3BlY3RlZCB3b3JrcGxhY2VzXG5vc2hhX2luc3BlY3Rpb25zIDwtIGluc3BlY3Rpb25zICU+JSBcbiAgIyBBIGZpdmUgYXMgdGhlIHRoaXJkIGRpZ2l0IG9mIHRoZSByZXBvcnRpbmcgSUQgaW5kaWNhdGVzIGEgc3RhdGUgb2ZmaWNlIGluc3BlY3RlZCB0aGUgd29ya3NpdGUuXG4gIGZpbHRlcihzdHJfc3ViKHJlcG9ydGluZ19pZCwgMywgMykgIT0gXCI1XCIpXG5gYGAifQ== -->
+<pre class="r"><code># Filter to just OSHA-inspected workplaces
+osha_inspections &lt;- inspections %&gt;% 
+  # A five as the third digit of the reporting ID indicates a state office inspected the worksite.
+  filter(str_sub(reporting_id, 3, 3) != &quot;5&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVF3VW9ETVJDZGJyc3RYYWdLZ2hjdnVRcXlZTVVQRUQzMElDaDY2VzFKZDdNMWtpWkxNb3Q2ODhmOHRhNnoyd1ExZ1NSdjNzekx5OHp6L2ZvNlcyY0FNSVlKSkRCT0NjTDA3dWxxZWJNRW1DUVVqU2d6Nys4UHFqb2wwSk1MZjA5cHozN2o4d3RZZlQ5RXdsVHpuWEFFVG9haUEzbW1oTjdpYTJIcXdvckdXSlI2VzhqS1o0OTF1eXVrZG8wb1VScnRvaGZuMXJ6bjRkWEIrb3VPcnV2MnNYV3B1QXZXZ2N3cWpqeXZMZWtwaWlVejAzakxwRzgyamNRakd4R1h0VlFvTEVQRDNscUg3TSt2V1dsMDFaWW9LcmI1Wkk4dnE5dmVmZEFlMXNMajVEL3UvNU4wM2lmMVBsT2FsOVFpTktiNFJpZ2ZITkU0aG1ua2paVWFRNXZFdWh3TjhsQ1hsVVlGWm1nYzlqOXN0UjNGQVFJQUFBPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["length_of_reporting_id"],"name":[1],"type":["int"],"align":["right"]},{"label":["num_inspections"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"6","2":"6953"},{"1":"7","2":"4767052"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1801,10 +1818,10 @@ trump_inspections &lt;- osha_inspections %&gt;%
 
 count(trump_inspections)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxLCJuY29sIjoxfSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUXdRckNNQXlOMVNrV0ZNRWYyTUh6UU1VdjBBOFFUMTdqckRMY210SlY5T2lYcTFscFJWcG8wN3krdk9ibHNEdXU1VkVDUUI4R0lLQ2Y4UldHMi8xeXRWa0JEQVJuUFg0WmQvSEpyTGtIQUNZKzl1aVdrREtOaldyNU12dXYxQWxyYk9sUlJHWW5KVjU4ZkhpbGNtV05iU29ueitpd3VGaXU1K3lkbEl6SXVJbzBGNG11MlN6dHhTYkFvcVRHb0szME5YZjIzcGpjVVU0bmJEQ3ZkR3RVR2NSQUJ1ZndjLzgvQ2IrN1BzUW42R2RCZjZqMHRkSXFHcXJ4cE9xUVRIa01mZ3FGNGY5ZHRNZG9Xemh5R0hteXBEb2kzakM4dnlMVFFqNjVBUUFBIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxLCJuY29sIjoxfSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUVFRckNNQkJjWTZzWVVBUS8wSVBuZ29vdjBBZUlKNi9iR3FYUUppR042TkVIK2NicU5pUlNFa2cyTzVtZDdPejVlTm54Q3dlQU1TVEFZSnpTRlNhSDAyYTczd0lrakxJUnZjejYrQ0xXeWdFQWN4ZEhyMDlFU2lVMm9xWExjbGdwSTliTXFHY2VtTDBVZTlQeHBSWExsVFcyc1J5L29zWDhacWllc2k0cW1TcHRLeVdwaVBYTnBuRXZKZ0xXcFdvMG1rcmVNMnNlamM2c3lsU0JEV2FWYkxVb3ZSaHc3eHorN29lVGNMdnZnMzI5ZnVyMUowTGVLeW1Db1JvTFVmdGtRV053VThnMS9XK0RQVUxiM0NxTGdjZExWUWZFR1lidUIySEdjWSs1QVFBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"94059"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"96428"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -1816,10 +1833,10 @@ obama_inspections &lt;- osha_inspections %&gt;%
 
 count(obama_inspections)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxLCJuY29sIjoxfSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUVFRckNNQkJjWTZzWVVBUS8wSVBuZ29vdjBBZUlKNi9iR3FYUUppR042TkZ2K05ucU5pUlNFa2cyTzVtZDdPejVlTm54Q3dlQU1TVEFZSnpTRlNhSDAyYTczd0lrakxJUnZjejYrQ0xXeWdFQWN4ZEhuMWRFU2lVMm9xWExjbGdwSTliTXFHY2VtTDBVZTlQeHBSWExsVFcyc1J5L29zWDhacWllc2k0cW1TcHRLeVdwaVBYTnBuRXZKZ0xXcFdvMG1rcmVNMnNlamM2c3lsU0JEV2FWYkxVb3ZSaHc3eHorN29lVGNMdnZnMzI5ZnVyMUowTGVLeW1Db1JvTFVmdGtRV053VThnMS9XK0RQVUxiM0NxTGdjZExWUWZFR1lidUIvd0xyWkM1QVFBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxLCJuY29sIjoxfSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUVFRckNNQkRjcGxZeG9BaCtvQWZQQlJWZm9BOFFUMTdYR2t1aFRVSWEwYVBQOFhHK1FkMkdSQ1NCWkxPVDJjbk9IbmJITlQ5eUFFaGhBQXpTaks0dzNPNlhxODBLWU1Bb1MraGwzTWM3c2VZT0FKaTRtRHhmRVNtVDJJcU9MclAvU2hteHhrYmRpc0RzcGRpRGpnK3RXSzVzc0l2bCtCa3RGaGREOVpTOW81S1IwclpXa29wWTMyd1c5MklpWUZHcVZxT3BaWlZiYzIxMWJsV3VUdGhpWHN0T2k5S0xBZmZPNGVmK2Z4SnU5MzJ3ajlmUHZQNVF5S3FXSWhocThDUWFuMHhwREc0S2hhYi9iYkJIYUZkWVpUSHdlS21hZ0RqRDhQNENjYVZxVHJrQkFBQT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"104824"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"108780"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -1828,10 +1845,10 @@ count(obama_inspections)</code></pre>
 # What&#39;s the difference?
 (count(trump_inspections) - count(obama_inspections)) / count(obama_inspections)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVFzUXJDTUJBOVc2czBvQWdPcmgyY0MxYjhBaDNFU1p4Y3p4cWwwQ1loamVpM3VmZzkvb0NqZWkwSmFLYTdlM252NWQzdFZ2czUyek1BQ0tFTEFZUVJ0ZEJiYm1mWklnUG9CalIxNkNWdTZvMVk0eFlBR0RiMWNkK3NKOC9YekNOR0FpdGVVelA2VlF1UEZXdDVUUjF6WUcwN3ZsVmVZdTFic1NNYVRFK2F0RFM5UFVsZktsTklRYUtnQ1J2NU9iUUhUSE5aS2RTRk9DZEdYeXFWR0puSUExYVlGS0pXUExkbXdHeEUrSS9yUnc4KzFqK3kvajB1em9YZ2JxRVNEN3kwdzVCTzBGNGdWZlMvY2VzUldxZEdHblE4bHN2U0llM0M4UDRDTGl0QUo3a0JBQUE9In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVFRVzdDTUJCY0FnbkNFZ2pVRCtUUWN5UkF2SUErQVBXVTZ5WjFVYVRFYXpsRzhBUGV3WTFQVlB5cXg4QW1zcVhXcDkwZHo0eG45L01qMzRwY0FNQVlKaERCT09ZV2t2MWh2ZGx0QUNZUlR5TittZlgxd3F5M0FRQlk5UFh4czdyZDZmb2JFR09Gald5NVdmNVZxNEExTTNUT1BIUHViRWVoVlZsakcxcUpMN1NZZlJ2Vzh0UUZraWxwVzVGaVVkU0hqY01jSmdEZVMybzBta29kVTJ0T2pVNHRwVlJnZzJtbFdpMUxad2JDUllUL2NjUG8wZFA1eDg0L2tlcFlLZWtYcXJHUXRSc1dmSUxoQXBubS82MWZqOUUyczJUUjgwUkp0VWVHaGFGN0FWVVc3K3U1QVFBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["n"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.1026959"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+{"columns":[{"label":["n"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.1135503"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -1839,10 +1856,38 @@ count(obama_inspections)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6OSwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVFRVTdETUJCMGs2WW9sYWlRdUhETUM0SW80c2FoQWg2QU9QV0NLdGU0TkpKclI0NHJXb2tEQjVBNGNPQUhmUVUvNEN1OGdWdkRPRjBEaXFYVnJNZmVuZG05dVJxZjlzZDl4bGpNdWl4aWNZS1U5UzZ2VDRablE4YTZFVzRkdktRZVYvaDFpTVNUQTBRNjJyejc3MnkwZVNOOEpYd21mQ0o4SkZ3Uk9zS1MwZG4zL2FEeEJZMFBCQnJGdHdnMGpoZUlGOFE1cEQ5YnBoTE5GN0pDY3RBWTI1SGR0ZVNXOGlPOVhFeG0zSEZWdVBXazBGVXBoU3VNcmxxTlVtc2U4dERNdTRtODk3cXV2OXVLUXZFcUtBYXlmd2VGZkdaUmo5dTJWYkpuU3BLTS9QNlNWbkhIdG9nTHdaVllLdTVrNXVZeXd3UlRhVE16eThJY3h3Sko1YXdwOGZ4dnBreHlNYythNmVHcDZmaTMzczV1eGI5NXRITVoxYVNla0hwUDZ2dEN5ekN1NGxPcDZETEFrcG9kNWFVdHRBdkRnNjF5WitBdE1NS293RFRyWU5zZjRqQk9CbW9DQUFBPSJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGaWx0ZXIgdGhlIE9TSEEgaW5zcGVjdGlvbnMgdG8gb25seSBmYXRhbGl0eS9jYXRhc3Ryb3BoZSBzYWZldHkgaW5zcGVjdGlvbnNcbmZhdF9jYXRfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgXG4gIGZpbHRlcihzYWZldHlfaGx0aCA9PSBcIlNcIiAmIGluc3BfdHlwZSA9PSBcIk1cIilcblxuIyBHcm91cCBieSB5ZWFyXG5mYXRfY2F0X2luc3BlY3Rpb25zX2J5X3llYXIgPC0gZmF0X2NhdF9pbnNwZWN0aW9ucyAlPiUgXG4gIGdyb3VwX2J5KHllYXIgPSB5ZWFyKG9wZW5fZGF0ZSkpICU+JSBcbiAgc3VtbWFyaXplKG51bV9mYXRhbGl0eV9pbnNwZWN0aW9ucyA9IG4oKSkgJT4lIFxuICBhcnJhbmdlKGRlc2MoeWVhcikpXG5gYGAifQ== -->
+<pre class="r"><code># Filter the OSHA inspections to only fatality/catastrophe safety inspections
+fat_cat_inspections &lt;- osha_inspections %&gt;% 
+  filter(safety_hlth == &quot;S&quot; &amp; insp_type == &quot;M&quot;)
+
+# Group by year
+fat_cat_inspections_by_year &lt;- fat_cat_inspections %&gt;% 
+  group_by(year = year(open_date)) %&gt;% 
+  summarize(num_fatality_inspections = n()) %&gt;% 
+  arrange(desc(year))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBObyBmYXQvY2F0IGluc3BlY3Rpb25zIHJlY29yZGVkIHByaW9yIHRvIEFwcmlsIDIwLCAyMDExXG5mYXRfY2F0X2luc3BlY3Rpb25zX2J5X3llYXJcbmBgYCJ9 -->
+<pre class="r"><code># No fat/cat inspections recorded prior to April 20, 2011
+fat_cat_inspections_by_year</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTAsIm5jb2wiOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFCbDFRd1VvRE1SQk50OTFLRnl5Q0Y0LzdCU3RXdkJmMTZFRTg5VmJTbU5xRk5GbXlLYmJpd1lPSEhqeDRGcUgvNG4vMEt3U1BYVisyRTVRTkRHL3lNcGszYis2dVIrZkpLR0dNdFZtSFJhd2RJMlhkcTl1endjV0FzVTZFV3dzdlBZOUxWQjBqOFdRZmtRdzM3NzZjRFRkdmhHdkNWOElYd21mQ0phRWpMQWdWbzNQbyswTHJHMXBmaUErRVJId2luZ2h2TU1JV2RldkdnTEhtYzFraU9hcUgzSk9kbGVTVzhoTzltSStuM0hHVnU5VTQxMlVoaGN1TkxodU5ldFk4WnFHWm55anlQcXFxK21rcUNzWExvQmpJNUI0SzJkVGlQMjY3eHBjRFU1Qms1SGNaTno2M2JJTzRGRnlKaGVKT3BtNG1VemlZU0p1YWFScDhuQW9rcGJPbXdQTS9UNm5rWXBiVzd1dVZvdVBmaWx2RWhUemFUeGxWcEI2VGVsZnFoMXpMWUZmeGlWUjA2V05KOVk2eXd1YmFCZk5neTh3WnpCWVlZVlJnNm5XdzNTOFdoS2dJZGdJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["num_fatality_inspections"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"2020","2":"485"},{"1":"2019","2":"949"},{"1":"2018","2":"904"},{"1":"2017","2":"861"},{"1":"2016","2":"908"},{"1":"2015","2":"877"},{"1":"2014","2":"901"},{"1":"2013","2":"828"},{"1":"2012","2":"708"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[9]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["num_fatality_inspections"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"2020","2":"499"},{"1":"2019","2":"962"},{"1":"2018","2":"922"},{"1":"2017","2":"869"},{"1":"2016","2":"924"},{"1":"2015","2":"890"},{"1":"2014","2":"924"},{"1":"2013","2":"844"},{"1":"2012","2":"733"},{"1":"2011","2":"136"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY291bnQoZmF0X2NhdF9pbnNwZWN0aW9ucylcbmBgYCJ9 -->
+<pre class="r"><code>count(fat_cat_inspections)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxLCJuY29sIjoxfSwicmRmIjoiSDRzSUFBQUFBQUFBQmwxUXpXb0NNUkNlUmxkeHdWTG9vVGZKRTJ4UjhRWGFQa0RweWVzWVoyc2dKa3NTYWIzMXliV1Q3WVpLQXNuTWZQUE5UNzZQdCsyNjN0WUFNSUl4Q0JoVjdNTGs5WDI1MnF3QXhvS2pPODdNa3YxbTFtTVBBTXovN09LcElGVVdqeFRZZWJpdHRBVnI1dDFYazVtcGxmamg1OHFuYktjTWhySmR2Y2VJVGV1NW5xTkxVVEoxWGRUT2NwRkl5MWJsTHI0QVhoUWFkVElZU2NZRFNYczY3c2hMMThxV3B4Z2R6OCtLblJDOTZ6aXRiZWhJOVFNa29UcklNMkhxV0ErNndMODJ0enFsbTdZVTEyRjZOVXlma1AzVWx2SjNEZTdJRE1FOWk5UnIxSFJlMjVnL3oyaG9vdVBkTXFLY3lVZ3ZCMXgrQWJ0Zm9MM1hBUUFBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"7703"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -1850,13 +1895,16 @@ count(obama_inspections)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBIb3cgbWFueSBkaWZmZXJlbnQgd29ya3BsYWNlcyByZWNlaXZlZCBhbiBPU0hBIGZhdGFsaXR5IGluc3BlY3Rpb24gd2hlbiBncm91cGVkIGJ5IGFkZHJlc3MgYW5kIGluc3BlY3Rpb24gZGF0ZT9cbm9zaGFfZmF0YWxpdHlfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlIDwtIGZhdF9jYXRfaW5zcGVjdGlvbnMgJT4lIFxuICBncm91cF9ieShlc3RhYl9hZGRyZXNzID0gc3RyX3JlcGxhY2VfYWxsKHBhc3RlMChzaXRlX2FkZHJlc3MsIHNpdGVfY2l0eSwgc2l0ZV9zdGF0ZSwgc2l0ZV96aXApLCBcIiBcIiwgXCJcIiksIGZhdGFsaXR5X2luc3BfZGF0ZSA9IG9wZW5fZGF0ZSkgJT4lIFxuICBzZWxlY3QoZXN0YWJfYWRkcmVzcywgZmF0YWxpdHlfaW5zcF9kYXRlKVxuXG4jIEhvdyBtYW55IGRpZmZlcmVudCB3b3JrcGxhY2VzIHJlY2VpdmVkIGFueSBzb3J0IG9mIE9TSEEgc2FmZXR5IGluc3BlY3Rpb24gd2hlbiBncm91cGVkIGJ5IGFkZHJlc3M/XG5vc2hhX2FsbF9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgXG4gIGZpbHRlcihzYWZldHlfaGx0aCA9PSBcIlNcIikgJT4lIFxuICBncm91cF9ieShlc3RhYl9hZGRyZXNzID0gc3RyX3JlcGxhY2VfYWxsKHBhc3RlMChzaXRlX2FkZHJlc3MsIHNpdGVfY2l0eSwgc2l0ZV9zdGF0ZSwgc2l0ZV96aXApLCBcIiBcIiwgXCJcIiksIGFsbF9pbnNwX2RhdGUgPSBvcGVuX2RhdGUpICU+JSBcbiAgc2VsZWN0KGVzdGFiX2FkZHJlc3MsIGFsbF9pbnNwX2RhdGUpXG5cbm9zaGFfYWxsX2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZVxuXG4jIEpvaW4gdGhlIGRhdGEgZnJhbWVzIHRvIHNlZSBldmVyeSBzYWZldHkgaW5zcGVjdGlvbiBPU0hBIGNvbmR1Y3RlZCBwcmlvciB0byBlYWNoIHdvcmtwbGFjZSdzIGNhdGFzdHJvcGhpYy9mYXRhbCBhY2NpZGVudHMuXG5vc2hhX2luc3BlY3RlZF9wcmlvciA8LSBpbm5lcl9qb2luKG9zaGFfZmF0YWxpdHlfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlLCBvc2hhX2FsbF9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UsIGJ5ID0gXCJlc3RhYl9hZGRyZXNzXCIpICU+JSBcbiAgbXV0YXRlKGRheXNfYmV0d2VlbiA9IHRpbWVfbGVuZ3RoKGZhdGFsaXR5X2luc3BfZGF0ZSAtIGFsbF9pbnNwX2RhdGUsIFwiZGF5XCIpLFxuICAgICAgICAgcHJpb3JfaW5zcGVjdGlvbiA9IGNhc2Vfd2hlbihcbiAgICAgICAgICAgZGF5c19iZXR3ZWVuID4gMCAmIGRheXNfYmV0d2VlbiA8IDM2NTIuNSB+IFQsXG4gICAgICAgICAgIGRheXNfYmV0d2VlbiA9PSAwIHwgZGF5c19iZXR3ZWVuID49IDM2NTIuNSB+IEZcbiAgICAgICAgICAgKSkgJT4lIFxuICBmaWx0ZXIoZGF5c19iZXR3ZWVuID49IDApXG5cbiMgQW5kIGhvdyBtYW55IG9mIHRoZXNlIGNhdGFzdHJvcGhpYy9mYXRhbCBhY2NpZGVudHMgd2VyZSB0aGVyZT9cbm9zaGFfaW5zcGVjdGVkX3ByaW9yICU+JSBcbiAgZGlzdGluY3QoZXN0YWJfYWRkcmVzcywgZmF0YWxpdHlfaW5zcF9kYXRlKSAlPiUgXG4gIHN1bW1hcml6ZShudW1fYWNjaWRlbnRzID0gbigpKSAlPiUgXG4gIGFycmFuZ2UoZGVzYyhudW1fYWNjaWRlbnRzKSlcblxuIyBBbmQgaG93IG1hbnkgb2YgdGhlc2UgY2F0YXN0cm9waGljL2ZhdGFsIGFjY2lkZW50cyB3ZXJlIHByZWNlZGVkIGJ5IGFuIGluc3BlY3Rpb24gaW4gdGhlIHByaW9yIDEwIHllYXJzP1xub3NoYV9pbnNwZWN0ZWRfcHJpb3IgJT4lIFxuICBmaWx0ZXIocHJpb3JfaW5zcGVjdGlvbiA9PSBUKSAlPiUgXG4gIGRpc3RpbmN0KGVzdGFiX2FkZHJlc3MsIGZhdGFsaXR5X2luc3BfZGF0ZSkgJT4lIFxuICBzdW1tYXJpemUobnVtX2FjY2lkZW50cyA9IG4oKSkgJT4lIFxuICBhcnJhbmdlKGRlc2MobnVtX2FjY2lkZW50cykpXG5gYGAifQ== -->
-<pre class="r"><code># How many different workplaces received an OSHA fatality inspection when grouped by address and inspection date?
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBIb3cgbWFueSBkaWZmZXJlbnQgd29ya3BsYWNlcyByZWNlaXZlZCBhbiBPU0hBIHNhZmV0eSBmYXQvY2F0IGluc3BlY3Rpb24gd2hlbiBncm91cGVkIGJ5IGFkZHJlc3MgYW5kIGluc3BlY3Rpb24gZGF0ZT9cbm9zaGFfZmF0YWxpdHlfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlIDwtIGZhdF9jYXRfaW5zcGVjdGlvbnMgJT4lIFxuICBmaWx0ZXIob3Blbl9kYXRlID49IFwiMjAxMy0wMS0wMVwiKSAlPiUgXG4gIGdyb3VwX2J5KGVzdGFiX2FkZHJlc3MgPSBzdHJfcmVwbGFjZV9hbGwocGFzdGUwKHNpdGVfYWRkcmVzcywgc2l0ZV9jaXR5LCBzaXRlX3N0YXRlLCBzaXRlX3ppcCksIFwiIFwiLCBcIlwiKSwgZmF0YWxpdHlfaW5zcF9kYXRlID0gb3Blbl9kYXRlKSAlPiUgXG4gIHNlbGVjdChlc3RhYl9hZGRyZXNzLCBmYXRhbGl0eV9pbnNwX2RhdGUpXG5cbm9zaGFfZmF0YWxpdHlfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlXG5cbiMgSG93IG1hbnkgZGlmZmVyZW50IHdvcmtwbGFjZXMgcmVjZWl2ZWQgYW55IHNvcnQgb2YgT1NIQSBzYWZldHkgaW5zcGVjdGlvbiAoaW5jbHVkaW5nIGZhdC9jYXQgaW5zcGVjdGlvbnMpIHdoZW4gZ3JvdXBlZCBieSBhZGRyZXNzIGFuZCBpbnNwZWN0aW9uIGRhdGU/XG5vc2hhX2FsbF9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgXG4gIGZpbHRlcihzYWZldHlfaGx0aCA9PSBcIlNcIikgJT4lIFxuICBncm91cF9ieShlc3RhYl9hZGRyZXNzID0gc3RyX3JlcGxhY2VfYWxsKHBhc3RlMChzaXRlX2FkZHJlc3MsIHNpdGVfY2l0eSwgc2l0ZV9zdGF0ZSwgc2l0ZV96aXApLCBcIiBcIiwgXCJcIiksIGFsbF9pbnNwX2RhdGUgPSBvcGVuX2RhdGUpICU+JSBcbiAgc2VsZWN0KGVzdGFiX2FkZHJlc3MsIGFsbF9pbnNwX2RhdGUpXG5cbm9zaGFfYWxsX2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZVxuXG4jIEpvaW4gdGhlIGRhdGEgZnJhbWVzIHRvIHNlZSBldmVyeSBzYWZldHkgaW5zcGVjdGlvbiAoaW5jbHVkaW5nIGZhdC9jYXQgaW5zcGVjdGlvbnMpIE9TSEEgY29uZHVjdGVkIHByaW9yIHRvIGVhY2ggd29ya3BsYWNlJ3MgY2F0YXN0cm9waGljL2ZhdGFsIGFjY2lkZW50cy5cbm9zaGFfaW5zcGVjdGVkX3ByaW9yIDwtIGlubmVyX2pvaW4ob3NoYV9mYXRhbGl0eV9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UsIG9zaGFfYWxsX2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZSwgYnkgPSBcImVzdGFiX2FkZHJlc3NcIikgJT4lIFxuICBtdXRhdGUoZGF5c19iZXR3ZWVuID0gdGltZV9sZW5ndGgoZmF0YWxpdHlfaW5zcF9kYXRlIC0gYWxsX2luc3BfZGF0ZSwgXCJkYXlcIiksXG4gICAgICAgICBwcmlvcl9pbnNwZWN0aW9uID0gY2FzZV93aGVuKFxuICAgICAgICAgICBkYXlzX2JldHdlZW4gPiAwICYgZGF5c19iZXR3ZWVuIDwgMzY1Mi41IH4gVCxcbiAgICAgICAgICAgZGF5c19iZXR3ZWVuID09IDAgfCBkYXlzX2JldHdlZW4gPj0gMzY1Mi41IH4gRlxuICAgICAgICAgICApKSAlPiUgXG4gIGZpbHRlcihkYXlzX2JldHdlZW4gPj0gMClcblxuIyBBbmQgaG93IG1hbnkgb2YgdGhlc2UgY2F0YXN0cm9waGljL2ZhdGFsIGFjY2lkZW50cyB3ZXJlIHRoZXJlP1xub3NoYV9pbnNwZWN0ZWRfcHJpb3IgJT4lIFxuICBkaXN0aW5jdChlc3RhYl9hZGRyZXNzLCBmYXRhbGl0eV9pbnNwX2RhdGUpICU+JSBcbiAgc3VtbWFyaXplKG51bV9hY2NpZGVudHMgPSBuKCkpICU+JSBcbiAgYXJyYW5nZShkZXNjKG51bV9hY2NpZGVudHMpKVxuXG5vc2hhX2luc3BlY3RlZF9wcmlvciAlPiUgXG4gIGZpbHRlcihlc3RhYl9hZGRyZXNzID09IFwiMTAyLTAxNjZUSFJPQURGT1JFU1RISUxMU05ZMTEzNzVcIilcblxuIyBBbmQgaG93IG1hbnkgb2YgdGhlc2UgY2F0YXN0cm9waGljL2ZhdGFsIGFjY2lkZW50cyB3ZXJlIHByZWNlZGVkIGJ5IGFuIGluc3BlY3Rpb24gaW4gdGhlIHByaW9yIDEwIHllYXJzP1xub3NoYV9pbnNwZWN0ZWRfcHJpb3IgJT4lIFxuICBmaWx0ZXIocHJpb3JfaW5zcGVjdGlvbiA9PSBUKSAlPiUgXG4gIGRpc3RpbmN0KGVzdGFiX2FkZHJlc3MsIGZhdGFsaXR5X2luc3BfZGF0ZSkgJT4lIFxuICBzdW1tYXJpemUobnVtX2FjY2lkZW50cyA9IG4oKSkgJT4lIFxuICBhcnJhbmdlKGRlc2MobnVtX2FjY2lkZW50cykpXG5gYGAifQ== -->
+<pre class="r"><code># How many different workplaces received an OSHA safety fat/cat inspection when grouped by address and inspection date?
 osha_fatality_inspections_by_workplace &lt;- fat_cat_inspections %&gt;% 
+  filter(open_date &gt;= &quot;2013-01-01&quot;) %&gt;% 
   group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), &quot; &quot;, &quot;&quot;), fatality_insp_date = open_date) %&gt;% 
   select(estab_address, fatality_insp_date)
 
-# How many different workplaces received any sort of OSHA safety inspection when grouped by address?
+osha_fatality_inspections_by_workplace
+
+# How many different workplaces received any sort of OSHA safety inspection (including fat/cat inspections) when grouped by address and inspection date?
 osha_all_inspections_by_workplace &lt;- osha_inspections %&gt;% 
   filter(safety_hlth == &quot;S&quot;) %&gt;% 
   group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), &quot; &quot;, &quot;&quot;), all_insp_date = open_date) %&gt;% 
@@ -1864,7 +1912,7 @@ osha_all_inspections_by_workplace &lt;- osha_inspections %&gt;%
 
 osha_all_inspections_by_workplace
 
-# Join the data frames to see every safety inspection OSHA conducted prior to each workplace&#39;s catastrophic/fatal accidents.
+# Join the data frames to see every safety inspection (including fat/cat inspections) OSHA conducted prior to each workplace&#39;s catastrophic/fatal accidents.
 osha_inspected_prior &lt;- inner_join(osha_fatality_inspections_by_workplace, osha_all_inspections_by_workplace, by = &quot;estab_address&quot;) %&gt;% 
   mutate(days_between = time_length(fatality_insp_date - all_insp_date, &quot;day&quot;),
          prior_inspection = case_when(
@@ -1879,6 +1927,9 @@ osha_inspected_prior %&gt;%
   summarize(num_accidents = n()) %&gt;% 
   arrange(desc(num_accidents))
 
+osha_inspected_prior %&gt;% 
+  filter(estab_address == &quot;102-0166THROADFORESTHILLSNY11375&quot;)
+
 # And how many of these catastrophic/fatal accidents were preceded by an inspection in the prior 10 years?
 osha_inspected_prior %&gt;% 
   filter(prior_inspection == T) %&gt;% 
@@ -1890,26 +1941,70 @@ osha_inspected_prior %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93Ijo2LCJuY29sIjozNn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJ1MVh6WFBiUkJSWC9KSFVkcElXZXVnUkhUTEF4V0ZYc2lVbHB3amIxQUpYenRocVNVNGFWWlpqVFczSkk4a041UUovQzM4TWgzSXFKLzRLaGhQRGNFaDUrbGg5MVE1Mk1CME9hTWF6YjMvNzN1Kzl0Mi8zU1I2MEw5anFSWldpcUNKVm9ncFVzUXdpdGRzNngweVRvYWhTQVdZN3NGTHh4MjlBNnlFSVIvQjc0S3RGQ3hXMjBlQUZGdk1vRFRRNGptRXpBTjg4NGRNQWc0Vm1BaUNlUXdJckpCeUliVElDRnJpY3R6M0U0Q2FIMERhbnhBTzRmUXZQQm1NNnNrOTdmZmt4TFExN290eW12K3g4TFEyNzlTLzZnODVRb2J0U3J6ZWt1LzNodWFTSXZmK28vaWRQcEZaWDdQUm9VVmE2ZmZtU2J2VmxaU0MyRkFsb1d2M0JlWDhnS2xKZmp0US9rdnNEcFVzUHUwQkpQNVdsWjUzQlVGSXVFOWJzN2p6QWlLa2pUSE1jR0EzNlludkwrTWQ1L0xQYmNuMlhKUnZ0ZnRyNHZXQlovd1g1OGc1U2xxT01NY3MzLy9ra3k3b2piaWFzZTdkQ2d4SkM4ZlVNNVp4M2VUTWhaejNjVE5nd2R0eHNNRVFXRU1ma3ZPOXlESU14Mm56R3NEQ1Bad2d0MjVjbmF3aWZFeUYvTjVPVmRZUlczbHE2VGJpOVo5NTJkbUtINUlpbjZublhUdjIvM1hidDNrOXYzOGNjcGdlaTFJczY5YklZdHQyZGE0L0ZRYnNqMHkxNHA2MXd1VmxyWHNad3g2Nk1HcVFibEpjMWd3L2haYWVva0pENlZlZFNmU2Iybm5iK2xaVVBaTndVYUhqOEdERGlVV1BaQXVJNFBoOGh0RXJoSkpLTE9PNzRLYkdFa3hmQkR1bXFSY0hQdFhqb001Mjl1YUg4NSt6TjcyZlo4ZGZ2Zy9IMVdiais0MjR3ejMzTmx2V3A1cnBSV0FRc3RUWFBnUEVtZHZMenZaQjAxZmpUWWVqazlSOVU0cVR3OXU5NHYvdk4xOTM3WWRXNFBQaHQ4RjVFdkwrc3lac3AyeU1HTWFpTytEckRRbWxQbWVZcGMwSjMyc3JxWldHYnl4alhNYXJqQm8yNVUxWTRiZkRyTE9mS2Jta3pnNVQ5aUZ4MVRmZk1sNmIzU3JVYzBoRWNZMjQ3bm1sZHFlWW93cXF1Qjl1aWpxZmFGVUVNZ0o2clBpZXhjMDFRMFVZang0RFRGV0tWQU5PQlB5YnlnWUF0UXU0RnlMZm1uR2pZMTViaHFONnJ1WkZGZEhzVUk5cm9wV3JabnFrVHBPWnFZd095bUV5OVNVS3NaNHdzemRUZE5GSXhMWGVlOFJRQXJtN0hTTzE2QWx0anEvNEN5WE5obWJZVjVMQnc0OXhEOXpQTldveHptRzVicnZlT25tUEcyTVRRSU9xc2JZUmxiR085eEhadlpsNDVta1dtdFpsbVRpRXl4ekFJVkFtZ2RBVWluVlFGQWlTcHdQN0VkajBWNnF1K01JaFZ6WEpnRDlTZzZJUVpkc2xTUnduUGdhNjVoanF6UjJud3ZqNjFBWVZFeHN0ZzN5SUZsNmRnN09VT2JzV3hyNC9KNFQyQVg4Ry93UEJHK1hQRkhhNENvM1k4ZHZ5ekdkemtETjJlUGZlZ2dFQlc4UC9TbDNQR08wNE91TCt3Zk9lanVqNVpXQy9xL3AveWFyQWNQZ2VSdkp1U2owS1hSUkpZbVh6QUd0YVZhU1hKYXMrTmFUUTVoQ1NESEkvbmpoa1h0QXFvZSt6Wm5rYjBxcm85SlVqWXBXNytBaExsLzluS0VBQUEifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBXaGl0ZSBIb3VzZSBkZWNsYXJlZCBhIG5hdGlvbmFsIGVtZXJnZW5jeSBvbiAzLzEzXG5jb3ZpZF9pbnNwZWN0aW9ucyA8LSBvc2hhX2luc3BlY3Rpb25zICU+JSBcbiAgZmlsdGVyKG9wZW5fZGF0ZSA+PSBcIjIwMjAtMDMtMTNcIiAmIG9wZW5fZGF0ZSA8PSBcIjIwMjAtMDctMThcIikgJT4lIFxuICBncm91cF9ieShzYWZldHlfaGx0aCkgJT4lIFxuICBzdW1tYXJpemUoY291bnQgPSBuKCkpXG5gYGAifQ== -->
+<pre class="r"><code># White House declared a national emergency on 3/13
+covid_inspections &lt;- osha_inspections %&gt;% 
+  filter(open_date &gt;= &quot;2020-03-13&quot; &amp; open_date &lt;= &quot;2020-07-18&quot;) %&gt;% 
+  group_by(safety_hlth) %&gt;% 
+  summarize(count = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKGNvdmlkX2luc3BlY3Rpb25zJGNvdW50KVxuYGBgIn0= -->
+<pre class="r"><code>sum(covid_inspections$count)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQ2MzVcbiJ9 -->
+<pre><code>[1] 4635</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY292aWRfaW5zcGVjdGlvbnNcbmBgYCJ9 -->
+<pre class="r"><code>covid_inspections</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVFzVzdDTUJBOUVrSkZLbENsL29EWExwRUFkZWxTVlREUWlRcWtpcTB5amlHV2doM0ZScFN0Mzl3UElEMGJlNmc5bk44OTM3dm51L1ZpTzh1M09RQ2swSWNFMGd3aERPWWZrK256RktDZllOYkRsNkc5djdIcUVZRWxIOXp0SDVZQmJEQ01iaFhwTDhENEtXcVJTWHJrT3BMZmE3cm41dkpWMWFZS2RVeWRwSW5FdzFhZGk5REF1ZnhnNkxydUdydXdtdXJnRXNpOHBJWVcreGIxbU1XU085VVlvU1NLRWp0aEZvbDdiVVM4Vk9wTWpsUmVpSkM2NGN5SlNVVTFXVzJXYjRRcFdaNlk0U1hSUWpKTzVxdlA5d1haOFFPVnIvWXZydFB0akR4Ty9tUDd1NlR6cnBsM0hYQjVFSktITVd1NjQ3VlB4cmdjdDV1aWFRV3V6ZytOckM2TU1qVFU1VXpWZ1hGcmdPc2ZmZ2YzTlFRQ0FBQT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["activity_nr"],"name":[1],"type":["chr"],"align":["left"]},{"label":["reporting_id"],"name":[2],"type":["chr"],"align":["left"]},{"label":["state_flag"],"name":[3],"type":["chr"],"align":["left"]},{"label":["estab_name"],"name":[4],"type":["chr"],"align":["left"]},{"label":["site_address"],"name":[5],"type":["chr"],"align":["left"]},{"label":["site_city"],"name":[6],"type":["chr"],"align":["left"]},{"label":["site_state"],"name":[7],"type":["chr"],"align":["left"]},{"label":["site_zip"],"name":[8],"type":["chr"],"align":["left"]},{"label":["owner_type"],"name":[9],"type":["chr"],"align":["left"]},{"label":["owner_code"],"name":[10],"type":["chr"],"align":["left"]},{"label":["adv_notice"],"name":[11],"type":["chr"],"align":["left"]},{"label":["safety_hlth"],"name":[12],"type":["chr"],"align":["left"]},{"label":["sic_code"],"name":[13],"type":["chr"],"align":["left"]},{"label":["naics_code"],"name":[14],"type":["chr"],"align":["left"]},{"label":["insp_type"],"name":[15],"type":["chr"],"align":["left"]},{"label":["insp_scope"],"name":[16],"type":["chr"],"align":["left"]},{"label":["why_no_insp"],"name":[17],"type":["chr"],"align":["left"]},{"label":["union_status"],"name":[18],"type":["chr"],"align":["left"]},{"label":["safety_manuf"],"name":[19],"type":["chr"],"align":["left"]},{"label":["safety_const"],"name":[20],"type":["chr"],"align":["left"]},{"label":["safety_marit"],"name":[21],"type":["chr"],"align":["left"]},{"label":["health_manuf"],"name":[22],"type":["chr"],"align":["left"]},{"label":["health_const"],"name":[23],"type":["chr"],"align":["left"]},{"label":["health_marit"],"name":[24],"type":["chr"],"align":["left"]},{"label":["migrant"],"name":[25],"type":["chr"],"align":["left"]},{"label":["mail_street"],"name":[26],"type":["chr"],"align":["left"]},{"label":["mail_city"],"name":[27],"type":["chr"],"align":["left"]},{"label":["mail_state"],"name":[28],"type":["chr"],"align":["left"]},{"label":["mail_zip"],"name":[29],"type":["chr"],"align":["left"]},{"label":["host_est_key"],"name":[30],"type":["chr"],"align":["left"]},{"label":["nr_in_estab"],"name":[31],"type":["chr"],"align":["left"]},{"label":["open_date"],"name":[32],"type":["date"],"align":["right"]},{"label":["case_mod_date"],"name":[33],"type":["date"],"align":["right"]},{"label":["close_conf_date"],"name":[34],"type":["date"],"align":["right"]},{"label":["close_case_date"],"name":[35],"type":["date"],"align":["right"]},{"label":["ld_dt"],"name":[36],"type":["chr"],"align":["left"]}],"data":[{"1":"344783170","2":"0215600","3":"NA","4":"LONG ISLAND JEWISH-FOREST HILLS HOSPITAL","5":"102-01 66TH ROAD","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"NA","11":"N","12":"S","13":"NA","14":"622110","15":"M","16":"B","17":"I","18":"A","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"102-01 66TH ROAD","27":"FOREST HILLS","28":"NY","29":"11375","30":"HOST_EST_KEY_VALUE","31":"1589","32":"2020-06-11","33":"2020-07-22","34":"<NA>","35":"<NA>","36":"2020-07-23 00:25:29 EDT"},{"1":"344746623","2":"0215600","3":"NA","4":"LONG ISLAND JEWISH-FOREST HILLS HOSPITAL","5":"102-01 66TH ROAD","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"NA","11":"N","12":"S","13":"NA","14":"622110","15":"M","16":"B","17":"I","18":"A","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"102-01 66TH ROAD","27":"FOREST HILLS","28":"NY","29":"11375","30":"HOST_EST_KEY_VALUE","31":"100","32":"2020-05-11","33":"2020-07-22","34":"<NA>","35":"<NA>","36":"2020-07-23 00:25:28 EDT"},{"1":"344747597","2":"0215600","3":"NA","4":"LONG ISLAND JEWISH-FOREST HILLS HOSPITAL","5":"102-01 66TH ROAD","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"NA","11":"N","12":"S","13":"NA","14":"622110","15":"M","16":"B","17":"I","18":"A","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"102-01 66TH ROAD","27":"FOREST HILLS","28":"NY","29":"11375","30":"HOST_EST_KEY_VALUE","31":"100","32":"2020-05-11","33":"2020-07-22","34":"<NA>","35":"<NA>","36":"2020-07-23 00:25:28 EDT"},{"1":"344721857","2":"0215600","3":"NA","4":"LONG ISLAND JEWISH-FOREST HILLS HOSPITAL","5":"102-01 66TH ROAD","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"NA","11":"N","12":"S","13":"NA","14":"622110","15":"M","16":"B","17":"I","18":"B","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"102-01 66TH ROAD","27":"FOREST HILLS","28":"NY","29":"11375","30":"HOST_EST_KEY_VALUE","31":"1000","32":"2020-04-10","33":"2020-07-22","34":"<NA>","35":"<NA>","36":"2020-07-23 00:25:28 EDT"},{"1":"307608380","2":"0215600","3":"NA","4":"MICHAEL ANTHONY CONTRACTING CORPORATION","5":"102-01 66TH ROAD/FOREST HILLS HOSPITAL","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"0000","11":"N","12":"S","13":"1542","14":"236220","15":"B","16":"B","17":"NA","18":"Y","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"161 RAILROAD","27":"GARDEN CITY","28":"NY","29":"11040","30":"N158    000010704","31":"2","32":"2006-10-19","33":"2007-12-05","34":"2006-10-19","35":"2006-12-06","36":"2011-10-14 16:38:47 EDT"},{"1":"303528186","2":"0215600","3":"NA","4":"NORTH SHORE UNIVERSITY HOSPITAL","5":"102-01 66TH ROAD","6":"FOREST HILLS","7":"NY","8":"11375","9":"A","10":"0000","11":"N","12":"S","13":"8062","14":"000000","15":"L","16":"C","17":"NA","18":"N","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"00000","30":"N158    000006670","31":"800","32":"2000-11-16","33":"2007-10-22","34":"2000-11-16","35":"2002-01-10","36":"2011-10-14 16:38:47 EDT"}],"options":{"columns":{"min":{},"max":[10],"total":[36]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+{"columns":[{"label":["safety_hlth"],"name":[1],"type":["chr"],"align":["left"]},{"label":["count"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"H","2":"1010"},{"1":"S","2":"3625"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY292aWRfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgXG4gIGZpbHRlcihzYWZldHlfaGx0aCAhPSBcIlNcIiAmIG9wZW5fZGF0ZSA+PSBcIjIwMjAtMDMtMTNcIikgIyBXaGl0ZSBIb3VzZSBkZWNsYXJlZCBhIG5hdGlvbmFsIGVtZXJnZW5jeSBvbiAzLzEzLCByZXRyb2FjdGl2ZWx5IGVmZmVjdGl2ZSBvbiAzLzFcblxuY291bnQoY292aWRfaW5zcGVjdGlvbnMpXG5gYGAifQ== -->
-<pre class="r"><code>covid_inspections &lt;- osha_inspections %&gt;% 
-  filter(safety_hlth != &quot;S&quot; &amp; open_date &gt;= &quot;2020-03-13&quot;) # White House declared a national emergency on 3/13, retroactively effective on 3/1
-
-count(covid_inspections)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEhvdyBtYW55IGluc3BlY3Rpb25zIGRpZCBPU0hBIGNvbmR1Y3QgaW4gdGhlIHNhbWUgcGVyaW9kIGEgeWVhciBlYXJsaWVyP1xueWVhcl9hZ29fY292aWRfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgXG4gIGZpbHRlcihvcGVuX2RhdGUgPj0gXCIyMDE5LTAzLTEzXCIgJiBvcGVuX2RhdGUgPCBcIjIwMTktMDctMThcIikgJT4lIFxuICBncm91cF9ieShzYWZldHlfaGx0aCkgJT4lIFxuICBzdW1tYXJpemUoY291bnQgPSBuKCkpXG5gYGAifQ== -->
+<pre class="r"><code>
+# How many inspections did OSHA conduct in the same period a year earlier?
+year_ago_covid_inspections &lt;- osha_inspections %&gt;% 
+  filter(open_date &gt;= &quot;2019-03-13&quot; &amp; open_date &lt; &quot;2019-07-18&quot;) %&gt;% 
+  group_by(safety_hlth) %&gt;% 
+  summarize(count = n())</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKHllYXJfYWdvX2NvdmlkX2luc3BlY3Rpb25zJGNvdW50KVxuYGBgIn0= -->
+<pre class="r"><code>sum(year_ago_covid_inspections$count)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEzODgyXG4ifQ== -->
+<pre><code>[1] 13882</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueWVhcl9hZ29fY292aWRfaW5zcGVjdGlvbnNcbmBgYCJ9 -->
+<pre class="r"><code>year_ago_covid_inspections</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVF3VTdETUF6MXVuV29SVU5JL0VBK0FGVmlpQXNYaExiRE9BMHhDZTJHdkRSYkszVkoxV1FhdS9HYi9NeUtreVVIa29Qei9PTG5GL3Rqdm43TTF6a0FER0VFQ1F4VGdqQ2V2VDlNbjZZQW80U3lBYjFrOXY2bXFqc0NscngxdDM5WUJMQ2lNTGxVWkFody94dTFTQ1h1aFk3azF4cTN3cHkrcXNaVW9ZNnJnelNST092VXNRZ05uTXNQaGI3dno3RUxiMUFIbDBEbUpSb3N0aDNwS1lzbFY2bzF0WklrU3V5RWFTUWVkQkh4WEtrajI2TThzVnJxVm5BblpoVnF0bHd0WGhsWHNqeHdJMHFtYThrRm15MC8zK1pzSTNZb1greGZYS2ZMbVhpYy9NZjJkMG52WFZQdk9oWnlWMHNSeG14d0l4cWYzTkJ5M0c2S3RxdHBkWDVvWW5WaGxNRlFsM1BWQk1hdEFjNS9rNUdmTEFRQ0FBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["safety_hlth"],"name":[1],"type":["chr"],"align":["left"]},{"label":["count"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"H","2":"2401"},{"1":"S","2":"11481"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEFuZCB3aGF0J3MgYmVlbiB0aGUgY2hhbmdlP1xuKHN1bShjb3ZpZF9pbnNwZWN0aW9ucyRjb3VudCkgLSBzdW0oeWVhcl9hZ29fY292aWRfaW5zcGVjdGlvbnMkY291bnQpKSAvIHN1bSh5ZWFyX2Fnb19jb3ZpZF9pbnNwZWN0aW9ucyRjb3VudClcbmBgYCJ9 -->
+<pre class="r"><code>
+# And what&#39;s been the change?
+(sum(covid_inspections$count) - sum(year_ago_covid_inspections$count)) / sum(year_ago_covid_inspections$count)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0wLjY2NjExNDRcbiJ9 -->
+<pre><code>[1] -0.6661144</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk9TSEEgRmF0YWxpdHkgSW5zcGVjdGlvbnMgQW5hbHlzaXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7ciBzZXQgcGFja2FnZXN9DQpsaWJyYXJ5KGx1YnJpZGF0ZSkNCmxpYnJhcnkodGlkeXZlcnNlKQ0KYGBgDQoNCmBgYHtyIGltcG9ydCBpbnNwZWN0aW9ucyBkYXRhfQ0KDQojIEltcG9ydCB0aGUgaW5zcGVjdGlvbnMgZGF0YQ0KaW5zcGVjdGlvbnMgPC0gbGlzdC5maWxlcyhwYXRoID0gImRhdGEvb3NoYV9pbnNwZWN0aW9ucy8iLCBwYXR0ZXJuID0gIiouY3N2IiwgZnVsbC5uYW1lcyA9IFQpICU+JSANCiAgIyBDb252ZXJ0IGFsbCBjb2x1bW5zIHRvIGNoYXJhY3RlciB0eXBlIHRvIG1pbmltaXplIGRhdGEgdHlwZSBlcnJvcnMNCiAgbGFwcGx5KHJlYWRfY3N2LCBjb2xfdHlwZXMgPSBjb2xzKC5kZWZhdWx0ID0gImMiLCBvcGVuX2RhdGUgPSBjb2xfZGF0ZSgpLCBjYXNlX21vZF9kYXRlID0gY29sX2RhdGUoKSwgY2xvc2VfY29uZl9kYXRlID0gY29sX2RhdGUoKSwgY2xvc2VfY2FzZV9kYXRlID0gY29sX2RhdGUoKSkpICU+JSANCiAgIyBDb25jYXRlbmF0ZSB0aGUgQ1NWcw0KICBiaW5kX3Jvd3MoKQ0KYGBgDQoNCmBgYHtyIGZpbHRlciB0byBqdXN0IGluc3BlY3Rpb25zIGNvbmR1Y3RlZCBieSBPU0hBfQ0KIyBGaWx0ZXIgdG8ganVzdCBPU0hBLWluc3BlY3RlZCB3b3JrcGxhY2VzDQoNCmluc3BlY3Rpb25zICU+JSANCiAgbXV0YXRlKGxlbmd0aF9vZl9yZXBvcnRpbmdfaWQgPSBzdHJfbGVuZ3RoKHJlcG9ydGluZ19pZCkpICU+JSANCiAgZ3JvdXBfYnkobGVuZ3RoX29mX3JlcG9ydGluZ19pZCkgJT4lIA0KICBzdW1tYXJpemUobnVtX2luc3BlY3Rpb25zID0gbigpKSAlPiUgDQogIGFycmFuZ2UobnVtX2luc3BlY3Rpb25zKQ0KDQpvc2hhX2luc3BlY3Rpb25zIDwtIGluc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKHJlcG9ydGluZ19pZCkgDQpgYGANCg0KYGBge3IgY29tcGFyaW5nIHRydW1wIHRvIG9iYW1hIGluc3BlY3Rpb25zfQ0KIyBIb3cgbWFueSBzYWZldHkgaW5zcGVjdGlvbnMgZGlkIE9TSEEgY29uZHVjdCBkdXJpbmcgdGhlIGZpcnN0IDMuNSB5ZWFycyBvZiBUcnVtcCdzIHByZXNpZGVuY3k/DQp0cnVtcF9pbnNwZWN0aW9ucyA8LSBvc2hhX2luc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKHNhZmV0eV9obHRoID09ICJTIiAmICBvcGVuX2RhdGUgPj0gIjIwMTctMDEtMjAiICYgb3Blbl9kYXRlIDwgIjIwMjAtMDctMjAiKQ0KDQpjb3VudCh0cnVtcF9pbnNwZWN0aW9ucykNCg0KIyBIb3cgbWFueSBzYWZldHkgaW5zcGVjdGlvbnMgd2VyZSBjb25kdWN0ZWQgZHVyaW5nIHRoZSBsYXN0IDMuNSB5ZWFycyBvZiBPYmFtYSdzIHByZXNpZGVuY3k/DQpvYmFtYV9pbnNwZWN0aW9ucyA8LSBvc2hhX2luc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKHNhZmV0eV9obHRoID09ICJTIiAmIG9wZW5fZGF0ZSA+PSAiMjAxMy0wNy0yMCIgJiBvcGVuX2RhdGUgPCAiMjAxNy0wMS0yMCIpDQoNCmNvdW50KG9iYW1hX2luc3BlY3Rpb25zKQ0KDQojIFdoYXQncyB0aGUgZGlmZmVyZW5jZT8NCihjb3VudCh0cnVtcF9pbnNwZWN0aW9ucykgLSBjb3VudChvYmFtYV9pbnNwZWN0aW9ucykpIC8gY291bnQob2JhbWFfaW5zcGVjdGlvbnMpDQpgYGANCg0KYGBge3IgY2FsY3VsYXRlIHRoZSBudW1iZXIgb2YgZmF0YWxpdHkvY2F0YXN0cm9waGUgaW5zcGVjdGlvbnMgZWFjaCB5ZWFyfQ0KIyBGaWx0ZXIgdGhlIE9TSEEgaW5zcGVjdGlvbnMgdG8gb25seSBmYXRhbGl0eS9jYXRhc3Ryb3BoZSBzYWZldHkgaW5zcGVjdGlvbnMNCmZhdF9jYXRfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihzYWZldHlfaGx0aCA9PSAiUyIgJiBpbnNwX3R5cGUgPT0gIk0iKQ0KDQojIEdyb3VwIGJ5IHllYXINCmZhdF9jYXRfaW5zcGVjdGlvbnNfYnlfeWVhciA8LSBmYXRfY2F0X2luc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKG9wZW5fZGF0ZSA+PSAiMjAxMi0wMS0wMSIpICU+JSAjIE5vIGZhdC9jYXQgaW5zcGVjdGlvbnMgcmVjb3JkZWQgcHJpb3IgdG8gQXByaWwgMjAsIDIwMTEgc28gaXQgd291bGRuJ3QgYmUgZmFpciB0byBjb21wYXJlIDIwMTEgdG8gdGhlIG90aGVyIHllYXJzDQogIGdyb3VwX2J5KHllYXIgPSB5ZWFyKG9wZW5fZGF0ZSkpICU+JSANCiAgc3VtbWFyaXplKG51bV9mYXRhbGl0eV9pbnNwZWN0aW9ucyA9IG4oKSkgJT4lIA0KICBhcnJhbmdlKGRlc2MoeWVhcikpDQoNCmZhdF9jYXRfaW5zcGVjdGlvbnNfYnlfeWVhcg0KYGBgDQoNCmBgYHtyIGNhbGN1bGF0ZSB0aGUgbnVtYmVyIG9mIHdvcmtwbGFjZXMgdGhhdCB3aXRuZXNzZWQgYSBmYXRhbGl0eS9jYXRhc3Ryb3BoaWMgc2FmZXR5IGFjY2lkZW50IHNpbmNlIEphbnVhcnkgMSwgMjAxMyBmb3Igd2hpY2ggT1NIQSBjb25kdWN0ZWQgYSBwcmlvciBzYWZldHkgaW5zcGVjdGlvbiBpbiB0aGUgZGVjYWRlIHByZWNlZGluZyB0aGUgYWNjaWRlbnR9DQojIEhvdyBtYW55IGRpZmZlcmVudCB3b3JrcGxhY2VzIHJlY2VpdmVkIGFuIE9TSEEgZmF0YWxpdHkgaW5zcGVjdGlvbiB3aGVuIGdyb3VwZWQgYnkgYWRkcmVzcyBhbmQgaW5zcGVjdGlvbiBkYXRlPw0Kb3NoYV9mYXRhbGl0eV9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UgPC0gZmF0X2NhdF9pbnNwZWN0aW9ucyAlPiUgDQogIGdyb3VwX2J5KGVzdGFiX2FkZHJlc3MgPSBzdHJfcmVwbGFjZV9hbGwocGFzdGUwKHNpdGVfYWRkcmVzcywgc2l0ZV9jaXR5LCBzaXRlX3N0YXRlLCBzaXRlX3ppcCksICIgIiwgIiIpLCBmYXRhbGl0eV9pbnNwX2RhdGUgPSBvcGVuX2RhdGUpICU+JSANCiAgc2VsZWN0KGVzdGFiX2FkZHJlc3MsIGZhdGFsaXR5X2luc3BfZGF0ZSkNCg0KIyBIb3cgbWFueSBkaWZmZXJlbnQgd29ya3BsYWNlcyByZWNlaXZlZCBhbnkgc29ydCBvZiBPU0hBIHNhZmV0eSBpbnNwZWN0aW9uIHdoZW4gZ3JvdXBlZCBieSBhZGRyZXNzPw0Kb3NoYV9hbGxfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlIDwtIG9zaGFfaW5zcGVjdGlvbnMgJT4lIA0KICBmaWx0ZXIoc2FmZXR5X2hsdGggPT0gIlMiKSAlPiUgDQogIGdyb3VwX2J5KGVzdGFiX2FkZHJlc3MgPSBzdHJfcmVwbGFjZV9hbGwocGFzdGUwKHNpdGVfYWRkcmVzcywgc2l0ZV9jaXR5LCBzaXRlX3N0YXRlLCBzaXRlX3ppcCksICIgIiwgIiIpLCBhbGxfaW5zcF9kYXRlID0gb3Blbl9kYXRlKSAlPiUgDQogIHNlbGVjdChlc3RhYl9hZGRyZXNzLCBhbGxfaW5zcF9kYXRlKQ0KDQpvc2hhX2FsbF9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UNCg0KIyBKb2luIHRoZSBkYXRhIGZyYW1lcyB0byBzZWUgZXZlcnkgc2FmZXR5IGluc3BlY3Rpb24gT1NIQSBjb25kdWN0ZWQgcHJpb3IgdG8gZWFjaCB3b3JrcGxhY2UncyBjYXRhc3Ryb3BoaWMvZmF0YWwgYWNjaWRlbnRzLg0Kb3NoYV9pbnNwZWN0ZWRfcHJpb3IgPC0gaW5uZXJfam9pbihvc2hhX2ZhdGFsaXR5X2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZSwgb3NoYV9hbGxfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlLCBieSA9ICJlc3RhYl9hZGRyZXNzIikgJT4lIA0KICBtdXRhdGUoZGF5c19iZXR3ZWVuID0gdGltZV9sZW5ndGgoZmF0YWxpdHlfaW5zcF9kYXRlIC0gYWxsX2luc3BfZGF0ZSwgImRheSIpLA0KICAgICAgICAgcHJpb3JfaW5zcGVjdGlvbiA9IGNhc2Vfd2hlbigNCiAgICAgICAgICAgZGF5c19iZXR3ZWVuID4gMCAmIGRheXNfYmV0d2VlbiA8IDM2NTIuNSB+IFQsDQogICAgICAgICAgIGRheXNfYmV0d2VlbiA9PSAwIHwgZGF5c19iZXR3ZWVuID49IDM2NTIuNSB+IEYNCiAgICAgICAgICAgKSkgJT4lIA0KICBmaWx0ZXIoZGF5c19iZXR3ZWVuID49IDApDQoNCiMgQW5kIGhvdyBtYW55IG9mIHRoZXNlIGNhdGFzdHJvcGhpYy9mYXRhbCBhY2NpZGVudHMgd2VyZSB0aGVyZT8NCm9zaGFfaW5zcGVjdGVkX3ByaW9yICU+JSANCiAgZGlzdGluY3QoZXN0YWJfYWRkcmVzcywgZmF0YWxpdHlfaW5zcF9kYXRlKSAlPiUgDQogIHN1bW1hcml6ZShudW1fYWNjaWRlbnRzID0gbigpKSAlPiUgDQogIGFycmFuZ2UoZGVzYyhudW1fYWNjaWRlbnRzKSkNCg0KIyBBbmQgaG93IG1hbnkgb2YgdGhlc2UgY2F0YXN0cm9waGljL2ZhdGFsIGFjY2lkZW50cyB3ZXJlIHByZWNlZGVkIGJ5IGFuIGluc3BlY3Rpb24gaW4gdGhlIHByaW9yIDEwIHllYXJzPw0Kb3NoYV9pbnNwZWN0ZWRfcHJpb3IgJT4lIA0KICBmaWx0ZXIocHJpb3JfaW5zcGVjdGlvbiA9PSBUKSAlPiUgDQogIGRpc3RpbmN0KGVzdGFiX2FkZHJlc3MsIGZhdGFsaXR5X2luc3BfZGF0ZSkgJT4lIA0KICBzdW1tYXJpemUobnVtX2FjY2lkZW50cyA9IG4oKSkgJT4lIA0KICBhcnJhbmdlKGRlc2MobnVtX2FjY2lkZW50cykpDQpgYGANCg0KYGBge3J9DQpvc2hhX2ZhdGFsaXR5X2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZSAlPiUgDQogIGdyb3VwX2J5KGVzdGFiX2FkZHJlc3MpICU+JSANCiAgc3VtbWFyaXplKG51bV9mYXRfY2F0X2luc3BlY3Rpb25zID0gbigpKSAlPiUgDQogIGFycmFuZ2UoZGVzYyhudW1fZmF0X2NhdF9pbnNwZWN0aW9ucykpDQoNCm9zaGFfaW5zcGVjdGVkX3ByaW9yICU+JSANCiAgZmlsdGVyKGVzdGFiX2FkZHJlc3MgPT0gIjEwMi0wMTY2VEhST0FERk9SRVNUSElMTFNOWTExMzc1IikgJT4lIA0KICBhcnJhbmdlKGRlc2MoZmF0YWxpdHlfaW5zcF9kYXRlKSwgZGVzYyhhbGxfaW5zcF9kYXRlKSkNCg0Kb3NoYV9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihzdHJfZGV0ZWN0KHNpdGVfYWRkcmVzcywgIjEwMi0wMSA2NlRIIFJPQUQiKSAmIHNhZmV0eV9obHRoID09ICJTIiAmIGluc3BfdHlwZSA9PSAiTSIpICU+JSANCiAgYXJyYW5nZShkZXNjKG9wZW5fZGF0ZSkpDQoNCm9zaGFfaW5zcGVjdGlvbnMgJT4lIA0KICBmaWx0ZXIoc3RyX2RldGVjdChzaXRlX2FkZHJlc3MsICIxMDItMDEgNjZUSCBST0FEIikgJiBzYWZldHlfaGx0aCA9PSAiUyIpICU+JSANCiAgYXJyYW5nZShkZXNjKG9wZW5fZGF0ZSkpDQpgYGANCg0KDQoNCmBgYHtyIGhvdyBtYW55IG5vbi1zYWZldHkgKHByZXN1bWFibHkgaGVhbHRoKSBpbnNwZWN0aW9ucyBoYXMgT1NIQSBjb25kdWN0ZWQgc2luY2UgQ09WSUQgYmVnYW4/fQ0KY292aWRfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihzYWZldHlfaGx0aCAhPSAiUyIgJiBvcGVuX2RhdGUgPj0gIjIwMjAtMDMtMTMiKSAjIFdoaXRlIEhvdXNlIGRlY2xhcmVkIGEgbmF0aW9uYWwgZW1lcmdlbmN5IG9uIDMvMTMsIHJldHJvYWN0aXZlbHkgZWZmZWN0aXZlIG9uIDMvMQ0KDQpjb3VudChjb3ZpZF9pbnNwZWN0aW9ucykNCmBgYA==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk9TSEEgRmF0YWxpdHkgSW5zcGVjdGlvbnMgQW5hbHlzaXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7ciBzZXQgcGFja2FnZXN9DQpsaWJyYXJ5KGx1YnJpZGF0ZSkNCmxpYnJhcnkodGlkeXZlcnNlKQ0KYGBgDQoNCmBgYHtyIGltcG9ydCBpbnNwZWN0aW9ucyBkYXRhfQ0KDQojIEltcG9ydCB0aGUgaW5zcGVjdGlvbnMgZGF0YQ0KaW5zcGVjdGlvbnMgPC0gbGlzdC5maWxlcyhwYXRoID0gImRhdGEvb3NoYV9pbnNwZWN0aW9ucy8iLCBwYXR0ZXJuID0gIiouY3N2IiwgZnVsbC5uYW1lcyA9IFQpICU+JSANCiAgIyBDb252ZXJ0IGFsbCBjb2x1bW5zIHRvIGNoYXJhY3RlciB0eXBlIHRvIG1pbmltaXplIGRhdGEgdHlwZSBlcnJvcnMNCiAgbGFwcGx5KHJlYWRfY3N2LCBjb2xfdHlwZXMgPSBjb2xzKC5kZWZhdWx0ID0gImMiLCBvcGVuX2RhdGUgPSBjb2xfZGF0ZSgpLCBjYXNlX21vZF9kYXRlID0gY29sX2RhdGUoKSwgY2xvc2VfY29uZl9kYXRlID0gY29sX2RhdGUoKSwgY2xvc2VfY2FzZV9kYXRlID0gY29sX2RhdGUoKSkpICU+JSANCiAgIyBDb25jYXRlbmF0ZSB0aGUgQ1NWcw0KICBiaW5kX3Jvd3MoKQ0KYGBgDQoNCmBgYHtyIGZpbHRlciB0byBqdXN0IGluc3BlY3Rpb25zIGNvbmR1Y3RlZCBieSBPU0hBfQ0KIyBGaWx0ZXIgdG8ganVzdCBPU0hBLWluc3BlY3RlZCB3b3JrcGxhY2VzDQpvc2hhX2luc3BlY3Rpb25zIDwtIGluc3BlY3Rpb25zICU+JSANCiAgIyBBIGZpdmUgYXMgdGhlIHRoaXJkIGRpZ2l0IG9mIHRoZSByZXBvcnRpbmcgSUQgaW5kaWNhdGVzIGEgc3RhdGUgb2ZmaWNlIGluc3BlY3RlZCB0aGUgd29ya3NpdGUuDQogIGZpbHRlcihzdHJfc3ViKHJlcG9ydGluZ19pZCwgMywgMykgIT0gIjUiKQ0KYGBgDQoNCmBgYHtyIGNvbXBhcmluZyB0cnVtcCB0byBvYmFtYSBpbnNwZWN0aW9uc30NCiMgSG93IG1hbnkgc2FmZXR5IGluc3BlY3Rpb25zIGRpZCBPU0hBIGNvbmR1Y3QgZHVyaW5nIHRoZSBmaXJzdCAzLjUgeWVhcnMgb2YgVHJ1bXAncyBwcmVzaWRlbmN5Pw0KdHJ1bXBfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihzYWZldHlfaGx0aCA9PSAiUyIgJiAgb3Blbl9kYXRlID49ICIyMDE3LTAxLTIwIiAmIG9wZW5fZGF0ZSA8ICIyMDIwLTA3LTIwIikNCg0KY291bnQodHJ1bXBfaW5zcGVjdGlvbnMpDQoNCiMgSG93IG1hbnkgc2FmZXR5IGluc3BlY3Rpb25zIHdlcmUgY29uZHVjdGVkIGR1cmluZyB0aGUgbGFzdCAzLjUgeWVhcnMgb2YgT2JhbWEncyBwcmVzaWRlbmN5Pw0Kb2JhbWFfaW5zcGVjdGlvbnMgPC0gb3NoYV9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihzYWZldHlfaGx0aCA9PSAiUyIgJiBvcGVuX2RhdGUgPj0gIjIwMTMtMDctMjAiICYgb3Blbl9kYXRlIDwgIjIwMTctMDEtMjAiKQ0KDQpjb3VudChvYmFtYV9pbnNwZWN0aW9ucykNCg0KIyBXaGF0J3MgdGhlIGRpZmZlcmVuY2U/DQooY291bnQodHJ1bXBfaW5zcGVjdGlvbnMpIC0gY291bnQob2JhbWFfaW5zcGVjdGlvbnMpKSAvIGNvdW50KG9iYW1hX2luc3BlY3Rpb25zKQ0KYGBgDQoNCmBgYHtyIGNhbGN1bGF0ZSB0aGUgbnVtYmVyIG9mIGZhdGFsaXR5L2NhdGFzdHJvcGhlIGluc3BlY3Rpb25zIGVhY2ggeWVhcn0NCiMgRmlsdGVyIHRoZSBPU0hBIGluc3BlY3Rpb25zIHRvIG9ubHkgZmF0YWxpdHkvY2F0YXN0cm9waGUgc2FmZXR5IGluc3BlY3Rpb25zDQpmYXRfY2F0X2luc3BlY3Rpb25zIDwtIG9zaGFfaW5zcGVjdGlvbnMgJT4lIA0KICBmaWx0ZXIoc2FmZXR5X2hsdGggPT0gIlMiICYgaW5zcF90eXBlID09ICJNIikNCg0KIyBHcm91cCBieSB5ZWFyDQpmYXRfY2F0X2luc3BlY3Rpb25zX2J5X3llYXIgPC0gZmF0X2NhdF9pbnNwZWN0aW9ucyAlPiUgDQogIGdyb3VwX2J5KHllYXIgPSB5ZWFyKG9wZW5fZGF0ZSkpICU+JSANCiAgc3VtbWFyaXplKG51bV9mYXRhbGl0eV9pbnNwZWN0aW9ucyA9IG4oKSkgJT4lIA0KICBhcnJhbmdlKGRlc2MoeWVhcikpDQoNCiMgTm8gZmF0L2NhdCBpbnNwZWN0aW9ucyByZWNvcmRlZCBwcmlvciB0byBBcHJpbCAyMCwgMjAxMQ0KZmF0X2NhdF9pbnNwZWN0aW9uc19ieV95ZWFyDQpjb3VudChmYXRfY2F0X2luc3BlY3Rpb25zKQ0KYGBgDQoNCmBgYHtyIGNhbGN1bGF0ZSB0aGUgbnVtYmVyIG9mIHdvcmtwbGFjZXMgdGhhdCB3aXRuZXNzZWQgYSBmYXRhbGl0eS9jYXRhc3Ryb3BoaWMgc2FmZXR5IGFjY2lkZW50IHNpbmNlIEphbnVhcnkgMSwgMjAxMyBmb3Igd2hpY2ggT1NIQSBjb25kdWN0ZWQgYSBwcmlvciBzYWZldHkgaW5zcGVjdGlvbiBpbiB0aGUgZGVjYWRlIHByZWNlZGluZyB0aGUgYWNjaWRlbnR9DQojIEhvdyBtYW55IGRpZmZlcmVudCB3b3JrcGxhY2VzIHJlY2VpdmVkIGFuIE9TSEEgc2FmZXR5IGZhdC9jYXQgaW5zcGVjdGlvbiB3aGVuIGdyb3VwZWQgYnkgYWRkcmVzcyBhbmQgaW5zcGVjdGlvbiBkYXRlPw0Kb3NoYV9mYXRhbGl0eV9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UgPC0gZmF0X2NhdF9pbnNwZWN0aW9ucyAlPiUgDQogIGZpbHRlcihvcGVuX2RhdGUgPj0gIjIwMTMtMDEtMDEiKSAlPiUgDQogIGdyb3VwX2J5KGVzdGFiX2FkZHJlc3MgPSBzdHJfcmVwbGFjZV9hbGwocGFzdGUwKHNpdGVfYWRkcmVzcywgc2l0ZV9jaXR5LCBzaXRlX3N0YXRlLCBzaXRlX3ppcCksICIgIiwgIiIpLCBmYXRhbGl0eV9pbnNwX2RhdGUgPSBvcGVuX2RhdGUpICU+JSANCiAgc2VsZWN0KGVzdGFiX2FkZHJlc3MsIGZhdGFsaXR5X2luc3BfZGF0ZSkNCg0Kb3NoYV9mYXRhbGl0eV9pbnNwZWN0aW9uc19ieV93b3JrcGxhY2UNCg0KIyBIb3cgbWFueSBkaWZmZXJlbnQgd29ya3BsYWNlcyByZWNlaXZlZCBhbnkgc29ydCBvZiBPU0hBIHNhZmV0eSBpbnNwZWN0aW9uIChpbmNsdWRpbmcgZmF0L2NhdCBpbnNwZWN0aW9ucykgd2hlbiBncm91cGVkIGJ5IGFkZHJlc3MgYW5kIGluc3BlY3Rpb24gZGF0ZT8NCm9zaGFfYWxsX2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZSA8LSBvc2hhX2luc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKHNhZmV0eV9obHRoID09ICJTIikgJT4lIA0KICBncm91cF9ieShlc3RhYl9hZGRyZXNzID0gc3RyX3JlcGxhY2VfYWxsKHBhc3RlMChzaXRlX2FkZHJlc3MsIHNpdGVfY2l0eSwgc2l0ZV9zdGF0ZSwgc2l0ZV96aXApLCAiICIsICIiKSwgYWxsX2luc3BfZGF0ZSA9IG9wZW5fZGF0ZSkgJT4lIA0KICBzZWxlY3QoZXN0YWJfYWRkcmVzcywgYWxsX2luc3BfZGF0ZSkNCg0Kb3NoYV9hbGxfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlDQoNCiMgSm9pbiB0aGUgZGF0YSBmcmFtZXMgdG8gc2VlIGV2ZXJ5IHNhZmV0eSBpbnNwZWN0aW9uIChpbmNsdWRpbmcgZmF0L2NhdCBpbnNwZWN0aW9ucykgT1NIQSBjb25kdWN0ZWQgcHJpb3IgdG8gZWFjaCB3b3JrcGxhY2UncyBjYXRhc3Ryb3BoaWMvZmF0YWwgYWNjaWRlbnRzLg0Kb3NoYV9pbnNwZWN0ZWRfcHJpb3IgPC0gaW5uZXJfam9pbihvc2hhX2ZhdGFsaXR5X2luc3BlY3Rpb25zX2J5X3dvcmtwbGFjZSwgb3NoYV9hbGxfaW5zcGVjdGlvbnNfYnlfd29ya3BsYWNlLCBieSA9ICJlc3RhYl9hZGRyZXNzIikgJT4lIA0KICBtdXRhdGUoZGF5c19iZXR3ZWVuID0gdGltZV9sZW5ndGgoZmF0YWxpdHlfaW5zcF9kYXRlIC0gYWxsX2luc3BfZGF0ZSwgImRheSIpLA0KICAgICAgICAgcHJpb3JfaW5zcGVjdGlvbiA9IGNhc2Vfd2hlbigNCiAgICAgICAgICAgZGF5c19iZXR3ZWVuID4gMCAmIGRheXNfYmV0d2VlbiA8IDM2NTIuNSB+IFQsDQogICAgICAgICAgIGRheXNfYmV0d2VlbiA9PSAwIHwgZGF5c19iZXR3ZWVuID49IDM2NTIuNSB+IEYNCiAgICAgICAgICAgKSkgJT4lIA0KICBmaWx0ZXIoZGF5c19iZXR3ZWVuID49IDApDQoNCiMgQW5kIGhvdyBtYW55IG9mIHRoZXNlIGNhdGFzdHJvcGhpYy9mYXRhbCBhY2NpZGVudHMgd2VyZSB0aGVyZT8NCm9zaGFfaW5zcGVjdGVkX3ByaW9yICU+JSANCiAgZGlzdGluY3QoZXN0YWJfYWRkcmVzcywgZmF0YWxpdHlfaW5zcF9kYXRlKSAlPiUgDQogIHN1bW1hcml6ZShudW1fYWNjaWRlbnRzID0gbigpKSAlPiUgDQogIGFycmFuZ2UoZGVzYyhudW1fYWNjaWRlbnRzKSkNCg0Kb3NoYV9pbnNwZWN0ZWRfcHJpb3IgJT4lIA0KICBmaWx0ZXIoZXN0YWJfYWRkcmVzcyA9PSAiMTAyLTAxNjZUSFJPQURGT1JFU1RISUxMU05ZMTEzNzUiKQ0KDQojIEFuZCBob3cgbWFueSBvZiB0aGVzZSBjYXRhc3Ryb3BoaWMvZmF0YWwgYWNjaWRlbnRzIHdlcmUgcHJlY2VkZWQgYnkgYW4gaW5zcGVjdGlvbiBpbiB0aGUgcHJpb3IgMTAgeWVhcnM/DQpvc2hhX2luc3BlY3RlZF9wcmlvciAlPiUgDQogIGZpbHRlcihwcmlvcl9pbnNwZWN0aW9uID09IFQpICU+JSANCiAgZGlzdGluY3QoZXN0YWJfYWRkcmVzcywgZmF0YWxpdHlfaW5zcF9kYXRlKSAlPiUgDQogIHN1bW1hcml6ZShudW1fYWNjaWRlbnRzID0gbigpKSAlPiUgDQogIGFycmFuZ2UoZGVzYyhudW1fYWNjaWRlbnRzKSkNCmBgYA0KDQpgYGB7ciBob3cgbWFueSBpbnNwZWN0aW9ucyBoYXMgT1NIQSBjb25kdWN0ZWQgc2luY2UgQ09WSUQgYmVnYW4/fQ0KIyBXaGl0ZSBIb3VzZSBkZWNsYXJlZCBhIG5hdGlvbmFsIGVtZXJnZW5jeSBvbiAzLzEzDQpjb3ZpZF9pbnNwZWN0aW9ucyA8LSBvc2hhX2luc3BlY3Rpb25zICU+JSANCiAgZmlsdGVyKG9wZW5fZGF0ZSA+PSAiMjAyMC0wMy0xMyIgJiBvcGVuX2RhdGUgPD0gIjIwMjAtMDctMTgiKSAlPiUgDQogIGdyb3VwX2J5KHNhZmV0eV9obHRoKSAlPiUgDQogIHN1bW1hcml6ZShjb3VudCA9IG4oKSkNCg0Kc3VtKGNvdmlkX2luc3BlY3Rpb25zJGNvdW50KQ0KY292aWRfaW5zcGVjdGlvbnMNCg0KIyBIb3cgbWFueSBpbnNwZWN0aW9ucyBkaWQgT1NIQSBjb25kdWN0IGluIHRoZSBzYW1lIHBlcmlvZCBhIHllYXIgZWFybGllcj8NCnllYXJfYWdvX2NvdmlkX2luc3BlY3Rpb25zIDwtIG9zaGFfaW5zcGVjdGlvbnMgJT4lIA0KICBmaWx0ZXIob3Blbl9kYXRlID49ICIyMDE5LTAzLTEzIiAmIG9wZW5fZGF0ZSA8ICIyMDE5LTA3LTE4IikgJT4lIA0KICBncm91cF9ieShzYWZldHlfaGx0aCkgJT4lIA0KICBzdW1tYXJpemUoY291bnQgPSBuKCkpDQoNCnN1bSh5ZWFyX2Fnb19jb3ZpZF9pbnNwZWN0aW9ucyRjb3VudCkNCnllYXJfYWdvX2NvdmlkX2luc3BlY3Rpb25zDQoNCiMgQW5kIHdoYXQncyBiZWVuIHRoZSBjaGFuZ2U/DQooc3VtKGNvdmlkX2luc3BlY3Rpb25zJGNvdW50KSAtIHN1bSh5ZWFyX2Fnb19jb3ZpZF9pbnNwZWN0aW9ucyRjb3VudCkpIC8gc3VtKHllYXJfYWdvX2NvdmlkX2luc3BlY3Rpb25zJGNvdW50KQ0KYGBg</div>
 
 
 

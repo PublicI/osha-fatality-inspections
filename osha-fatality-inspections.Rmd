@@ -20,15 +20,9 @@ inspections <- list.files(path = "data/osha_inspections/", pattern = "*.csv", fu
 
 ```{r filter to just inspections conducted by OSHA}
 # Filter to just OSHA-inspected workplaces
-
-inspections %>% 
-  mutate(length_of_reporting_id = str_length(reporting_id)) %>% 
-  group_by(length_of_reporting_id) %>% 
-  summarize(num_inspections = n()) %>% 
-  arrange(num_inspections)
-
 osha_inspections <- inspections %>% 
-  filter(reporting_id) 
+  # A five as the third digit of the reporting ID indicates a state office inspected the worksite.
+  filter(str_sub(reporting_id, 3, 3) != "5")
 ```
 
 ```{r comparing trump to obama inspections}
@@ -55,21 +49,25 @@ fat_cat_inspections <- osha_inspections %>%
 
 # Group by year
 fat_cat_inspections_by_year <- fat_cat_inspections %>% 
-  filter(open_date >= "2012-01-01") %>% # No fat/cat inspections recorded prior to April 20, 2011 so it wouldn't be fair to compare 2011 to the other years
   group_by(year = year(open_date)) %>% 
   summarize(num_fatality_inspections = n()) %>% 
   arrange(desc(year))
 
+# No fat/cat inspections recorded prior to April 20, 2011
 fat_cat_inspections_by_year
+count(fat_cat_inspections)
 ```
 
 ```{r calculate the number of workplaces that witnessed a fatality/catastrophic safety accident since January 1, 2013 for which OSHA conducted a prior safety inspection in the decade preceding the accident}
-# How many different workplaces received an OSHA fatality inspection when grouped by address and inspection date?
+# How many different workplaces received an OSHA safety fat/cat inspection when grouped by address and inspection date?
 osha_fatality_inspections_by_workplace <- fat_cat_inspections %>% 
+  filter(open_date >= "2013-01-01") %>% 
   group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""), fatality_insp_date = open_date) %>% 
   select(estab_address, fatality_insp_date)
 
-# How many different workplaces received any sort of OSHA safety inspection when grouped by address?
+osha_fatality_inspections_by_workplace
+
+# How many different workplaces received any sort of OSHA safety inspection (including fat/cat inspections) when grouped by address and inspection date?
 osha_all_inspections_by_workplace <- osha_inspections %>% 
   filter(safety_hlth == "S") %>% 
   group_by(estab_address = str_replace_all(paste0(site_address, site_city, site_state, site_zip), " ", ""), all_insp_date = open_date) %>% 
@@ -77,7 +75,7 @@ osha_all_inspections_by_workplace <- osha_inspections %>%
 
 osha_all_inspections_by_workplace
 
-# Join the data frames to see every safety inspection OSHA conducted prior to each workplace's catastrophic/fatal accidents.
+# Join the data frames to see every safety inspection (including fat/cat inspections) OSHA conducted prior to each workplace's catastrophic/fatal accidents.
 osha_inspected_prior <- inner_join(osha_fatality_inspections_by_workplace, osha_all_inspections_by_workplace, by = "estab_address") %>% 
   mutate(days_between = time_length(fatality_insp_date - all_insp_date, "day"),
          prior_inspection = case_when(
@@ -92,6 +90,9 @@ osha_inspected_prior %>%
   summarize(num_accidents = n()) %>% 
   arrange(desc(num_accidents))
 
+osha_inspected_prior %>% 
+  filter(estab_address == "102-0166THROADFORESTHILLSNY11375")
+
 # And how many of these catastrophic/fatal accidents were preceded by an inspection in the prior 10 years?
 osha_inspected_prior %>% 
   filter(prior_inspection == T) %>% 
@@ -100,30 +101,25 @@ osha_inspected_prior %>%
   arrange(desc(num_accidents))
 ```
 
-```{r}
-osha_fatality_inspections_by_workplace %>% 
-  group_by(estab_address) %>% 
-  summarize(num_fat_cat_inspections = n()) %>% 
-  arrange(desc(num_fat_cat_inspections))
-
-osha_inspected_prior %>% 
-  filter(estab_address == "102-0166THROADFORESTHILLSNY11375") %>% 
-  arrange(desc(fatality_insp_date), desc(all_insp_date))
-
-osha_inspections %>% 
-  filter(str_detect(site_address, "102-01 66TH ROAD") & safety_hlth == "S" & insp_type == "M") %>% 
-  arrange(desc(open_date))
-
-osha_inspections %>% 
-  filter(str_detect(site_address, "102-01 66TH ROAD") & safety_hlth == "S") %>% 
-  arrange(desc(open_date))
-```
-
-
-
-```{r how many non-safety (presumably health) inspections has OSHA conducted since COVID began?}
+```{r how many inspections has OSHA conducted since COVID began?}
+# White House declared a national emergency on 3/13
 covid_inspections <- osha_inspections %>% 
-  filter(safety_hlth != "S" & open_date >= "2020-03-13") # White House declared a national emergency on 3/13, retroactively effective on 3/1
+  filter(open_date >= "2020-03-13" & open_date <= "2020-07-18") %>% 
+  group_by(safety_hlth) %>% 
+  summarize(count = n())
 
-count(covid_inspections)
+sum(covid_inspections$count)
+covid_inspections
+
+# How many inspections did OSHA conduct in the same period a year earlier?
+year_ago_covid_inspections <- osha_inspections %>% 
+  filter(open_date >= "2019-03-13" & open_date < "2019-07-18") %>% 
+  group_by(safety_hlth) %>% 
+  summarize(count = n())
+
+sum(year_ago_covid_inspections$count)
+year_ago_covid_inspections
+
+# And what's been the change?
+(sum(covid_inspections$count) - sum(year_ago_covid_inspections$count)) / sum(year_ago_covid_inspections$count)
 ```
