@@ -114,7 +114,7 @@ inspections_by_month <- osha_inspections %>%
            open_date >= obama_begin_date &
            open_date < trump_end_date) %>%
   group_by(month = floor_date(open_date, unit = "month")) %>%
-  summarize(count = n(), )
+  summarize(count = n())
 
 ggplot(inspections_by_month, aes(x = month, y = count)) +
   geom_col()
@@ -235,6 +235,7 @@ count(covid_inspections)
 ```
 
 ## How many inspections did OSHA conduct in the same period a year earlier?
+
 ```{r}
 year_before_covid_emergency <- "2019-03-13"
 year_before_covid_end_date <- "2019-07-18"
@@ -247,6 +248,7 @@ count(year_ago_covid_inspections)
 ```
 
 ## And what's been the change?
+
 ```{r}
 (
   count(covid_inspections) - count(year_ago_covid_inspections)
