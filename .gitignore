@@ -1,1 +1,6 @@
 *.csv
+.RData
+.Rhistory
+.Rprofile
+.Rproj.user/
+renv/
