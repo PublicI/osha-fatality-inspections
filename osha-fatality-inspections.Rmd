@@ -8,7 +8,7 @@ output:
 
 # Setup
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, message=FALSE}
 library(tidyverse)
 library(lubridate)
 ```
