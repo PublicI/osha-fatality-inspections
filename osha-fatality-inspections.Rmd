@@ -16,10 +16,12 @@ library(lubridate)
 ## Download the inspections data
 
 ```{r download inspections data, warning=FALSE}
+current_date <- str_remove_all(Sys.Date(), "-") # Set current date
+
 data_path <- "data"
 data_dir <- "osha_inspections"
 data_url <- "https://enfxfr.dol.gov/data_catalog/OSHA"
-data_file <- "osha_inspection_20200727.csv.zip"
+data_file <- paste0("osha_inspection_", current_date, ".csv.zip")
 
 if (!file.exists(file.path(data_path, data_dir))) {
   dir.create(data_path)
@@ -118,6 +120,10 @@ inspections_by_month <- osha_inspections %>%
 
 ggplot(inspections_by_month, aes(x = month, y = count)) +
   geom_col()
+
+# Export this data
+write_csv(inspections_by_month, "data/exported/inspections_by_month.csv")
+ggsave("data/exported/inspections_by_month.png")
 ```
 
 ## Filter the OSHA inspections to only fatality/catastrophe safety inspections
