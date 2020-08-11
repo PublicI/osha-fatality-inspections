@@ -16,12 +16,12 @@ library(lubridate)
 ## Download the inspections data
 
 ```{r download inspections data, warning=FALSE}
-current_date <- str_remove_all(Sys.Date(), "-") # Set current date
+file_date <- str_remove_all(Sys.Date() - days(1), "-") # Set file date
 
 data_path <- "data"
 data_dir <- "osha_inspections"
 data_url <- "https://enfxfr.dol.gov/data_catalog/OSHA"
-data_file <- paste0("osha_inspection_", current_date, ".csv.zip")
+data_file <- paste0("osha_inspection_", file_date, ".csv.zip")
 
 if (!file.exists(file.path(data_path, data_dir))) {
   dir.create(data_path)
@@ -137,6 +137,17 @@ fat_cat_inspections <- osha_inspections %>%
 count(fat_cat_inspections)
 ```
 
+## How many fat/cat safety inspections did OSHA conduct during the first 3.5 years of Trump's presidency?
+
+```{r}
+trump_fat_cat_inspections <- fat_cat_inspections %>%
+  filter(open_date >= trump_begin_date,
+         open_date < trump_end_date)
+
+count(trump_fat_cat_inspections)
+```
+
+
 ## Fat/cat inspections grouped by year
 
 ```{r fat/cat inspections by year, warning=FALSE}
@@ -162,7 +173,7 @@ ggplot(fat_cat_inspections_by_year,
   geom_col()
 ```
 
-## How many different workplaces received any sort of OSHA safety inspection (including fat/cat inspections) when grouped by address and inspection date?
+## How many workplaces received any sort of OSHA safety inspection (including fat/cat inspections) when grouped by address and inspection date?
 
 ```{r}
 osha_inspections_w_workplace <- osha_inspections %>%
@@ -175,7 +186,7 @@ n_distinct(osha_inspections_w_workplace %>%
   select(estab_address, open_date))
 ```
 
-## How many different workplaces received an OSHA safety fat/cat inspection when grouped by address and inspection date?
+## How many workplaces received an OSHA safety fat/cat inspection when grouped by address and inspection date?
 
 ```{r calculate the number of workplaces that witnessed a fatality/catastrophic safety accident since January 1, 2013 for which OSHA conducted a prior safety inspection in the decade preceding the accident}
 
@@ -200,7 +211,7 @@ osha_inspected_prior <-
     years_between = time_length(open_date_fatality - open_date_all, "year"),
     prior_inspection = years_between < 10
   ) %>%
-  filter(open_date_fatality != open_date_all)
+  filter(open_date_fatality > open_date_all)
 ```
 
 ## And how many of these catastrophic/fatal accidents were there?
@@ -214,7 +225,17 @@ n_distinct(osha_inspected_prior %>%
 
 ```{r}
 osha_inspected_prior %>%
-  filter(estab_address == "102-0166THROADFORESTHILLSNY11375")
+  filter(estab_address == "102-0166THROADFORESTHILLSNY11375") %>% 
+  select(estab_address, safety_hlth_fatality, safety_hlth_all, insp_type_fatality, insp_type_all, open_date_fatality, open_date_all, years_between, prior_inspection) %>% 
+  arrange(desc(open_date_fatality), desc(open_date_all))
+
+osha_inspections %>% 
+  filter(site_address == "102-01 66TH ROAD" & site_city == "FOREST HILLS" & site_state == "NY" & site_zip == "11375" & safety_hlth == "S" & insp_type == "M" & open_date >= "2013-01-01") %>% 
+  arrange(desc(open_date))
+
+osha_inspections %>% 
+  filter(site_address == "102-01 66TH ROAD" & site_city == "FOREST HILLS" & site_state == "NY" & site_zip == "11375" & safety_hlth == "S") %>% 
+  arrange(desc(open_date))
 ```
 
 ## And how many of these catastrophic/fatal accidents were preceded by an inspection in the prior 10 years?
@@ -229,13 +250,11 @@ n_distinct(osha_inspected_prior %>%
 
 That is, since the White House declared a national emergency on 3/13.
 
-```{r how many inspections has OSHA conducted since COVID began?}
+```{r}
 covid_emergency_declared_date <- "2020-03-13"
-covid_end_date <- "2020-07-18"
 
 covid_inspections <- osha_inspections %>%
-  filter(open_date >= covid_emergency_declared_date,
-         open_date < covid_end_date)
+  filter(open_date >= covid_emergency_declared_date)
 
 count(covid_inspections)
 ```
@@ -244,7 +263,7 @@ count(covid_inspections)
 
 ```{r}
 year_before_covid_emergency <- "2019-03-13"
-year_before_covid_end_date <- "2019-07-18"
+year_before_covid_end_date <- "2019-08-06"
 
 year_ago_covid_inspections <- osha_inspections %>%
   filter(open_date >= year_before_covid_emergency,
@@ -259,4 +278,37 @@ count(year_ago_covid_inspections)
 (
   count(covid_inspections) - count(year_ago_covid_inspections)
 ) / count(year_ago_covid_inspections) * 100
+```
+
+## How many health inspections has OSHA conducted since COVID began?
+
+That is, since the White House declared a national emergency on 3/13.
+
+```{r}
+health <- "H"
+
+covid_inspections_health <- osha_inspections %>% 
+  filter(open_date >= covid_emergency_declared_date,
+         safety_hlth == health)
+
+count(covid_inspections_health)
+```
+
+## How many health inspections did OSHA conduct in the same period a year earlier?
+
+```{r}
+year_ago_covid_inspections_health <- osha_inspections %>%
+  filter(open_date >= year_before_covid_emergency,
+         open_date < year_before_covid_end_date,
+         safety_hlth == health)
+
+count(year_ago_covid_inspections_health)
+```
+
+## And what's been the change?
+
+```{r}
+(
+  count(covid_inspections_health) - count(year_ago_covid_inspections_health)
+) / count(year_ago_covid_inspections_health) * 100
 ```
