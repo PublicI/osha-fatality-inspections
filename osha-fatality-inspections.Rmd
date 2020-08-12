@@ -72,12 +72,12 @@ count(osha_inspections)
 
 # Analysis
 
-## How many safety inspections did OSHA conduct during the first 3.5 years of Trump's presidency?
+## How many safety inspections did OSHA conduct during the first three years of Trump's presidency?
 
 ```{r trump inspections}
 safety <- "S"
 trump_begin_date <- "2017-01-20"
-trump_end_date <- "2020-07-20"
+trump_end_date <- "2020-01-20"
 
 trump_inspections <- osha_inspections %>%
   filter(safety_hlth == safety,
@@ -87,10 +87,10 @@ trump_inspections <- osha_inspections %>%
 count(trump_inspections)
 ```
 
-## How many safety inspections were conducted during the last 3.5 years of Obama's presidency?
+## How many safety inspections were conducted during the last three years of Obama's presidency?
 
 ```{r obama inspections}
-obama_begin_date <- "2013-07-20"
+obama_begin_date <- "2014-01-20"
 
 obama_inspections <- osha_inspections %>%
   filter(safety_hlth == safety,
