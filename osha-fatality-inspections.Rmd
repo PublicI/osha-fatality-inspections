@@ -16,7 +16,7 @@ library(lubridate)
 ## Download the inspections data
 
 ```{r download inspections data, warning=FALSE}
-file_date <- str_remove_all(Sys.Date() - days(1), "-") # Set file date
+file_date <- str_remove_all(Sys.Date(), "-") # Set file date
 
 data_path <- "data"
 data_dir <- "osha_inspections"
@@ -82,7 +82,8 @@ trump_end_date <- "2020-01-20"
 trump_inspections <- osha_inspections %>%
   filter(safety_hlth == safety,
            open_date >= trump_begin_date,
-         open_date < trump_end_date)
+         open_date < trump_end_date,
+         insp_scope != "D") # no non-inspections
 
 count(trump_inspections)
 ```
@@ -95,7 +96,8 @@ obama_begin_date <- "2014-01-20"
 obama_inspections <- osha_inspections %>%
   filter(safety_hlth == safety,
          open_date >= obama_begin_date,
-         open_date < trump_begin_date)
+         open_date < trump_begin_date,
+         insp_scope != "D") # no non-inspections
 
 count(obama_inspections)
 ```
@@ -114,7 +116,8 @@ count(obama_inspections)
 inspections_by_month <- osha_inspections %>%
   filter(safety_hlth == safety &
            open_date >= obama_begin_date &
-           open_date < trump_end_date) %>%
+           open_date < trump_end_date &
+           insp_scope != "D") %>%  # no non-inspections
   group_by(month = floor_date(open_date, unit = "month")) %>%
   summarize(count = n())
 
@@ -142,7 +145,7 @@ count(fat_cat_inspections)
 ```{r}
 trump_fat_cat_inspections <- fat_cat_inspections %>%
   filter(open_date >= trump_begin_date,
-         open_date < trump_end_date)
+         open_date < "2020-07-20")
 
 count(trump_fat_cat_inspections)
 ```
@@ -151,7 +154,7 @@ count(trump_fat_cat_inspections)
 ## Fat/cat inspections grouped by year
 
 ```{r fat/cat inspections by year, warning=FALSE}
-fat_cat_inspections_by_year <- fat_cat_inspections %>%
+fat_cat_inspections_by_year <- fat_cat_inspections %>% 
   group_by(year = year(open_date)) %>%
   summarize(num_fatality_inspections = n()) %>%
   arrange(desc(year))
@@ -178,9 +181,9 @@ ggplot(fat_cat_inspections_by_year,
 ```{r}
 osha_inspections_w_workplace <- osha_inspections %>%
   filter(safety_hlth == safety) %>%
-  mutate(estab_address = str_replace_all(paste0(
-    site_address, site_city, site_state, site_zip
-  ), " ", ""))
+  mutate(estab_address = toupper(str_replace_all(paste0(
+    site_address, site_zip
+  ), " ", "")))
 
 n_distinct(osha_inspections_w_workplace %>%
   select(estab_address, open_date))
@@ -218,7 +221,7 @@ osha_inspected_prior <-
 
 ```{r}
 n_distinct(osha_inspected_prior %>%
-  select(estab_address, open_date_all))
+  select(estab_address, open_date_fatality))
 ```
 
 ## What does this look like for one address?
@@ -242,8 +245,9 @@ osha_inspections %>%
 
 ```{r}
 n_distinct(osha_inspected_prior %>%
-  filter(prior_inspection == TRUE) %>%
-  select(estab_address, open_date_all))
+  filter(prior_inspection == TRUE,
+         insp_scope_all != "D") %>% 
+    select(estab_address, open_date_fatality))
 ```
 
 ## How many inspections has OSHA conducted since COVID began?
@@ -254,7 +258,8 @@ That is, since the White House declared a national emergency on 3/13.
 covid_emergency_declared_date <- "2020-03-13"
 
 covid_inspections <- osha_inspections %>%
-  filter(open_date >= covid_emergency_declared_date)
+  filter(open_date >= covid_emergency_declared_date,
+         insp_scope != "D")
 
 count(covid_inspections)
 ```
@@ -267,7 +272,8 @@ year_before_covid_end_date <- "2019-08-06"
 
 year_ago_covid_inspections <- osha_inspections %>%
   filter(open_date >= year_before_covid_emergency,
-         open_date < year_before_covid_end_date)
+         open_date < year_before_covid_end_date,
+         insp_scope != "D")
 
 count(year_ago_covid_inspections)
 ```
@@ -289,7 +295,8 @@ health <- "H"
 
 covid_inspections_health <- osha_inspections %>% 
   filter(open_date >= covid_emergency_declared_date,
-         safety_hlth == health)
+         safety_hlth == health,
+         insp_scope != "D")
 
 count(covid_inspections_health)
 ```
@@ -300,7 +307,8 @@ count(covid_inspections_health)
 year_ago_covid_inspections_health <- osha_inspections %>%
   filter(open_date >= year_before_covid_emergency,
          open_date < year_before_covid_end_date,
-         safety_hlth == health)
+         safety_hlth == health,
+         insp_scope != "D")
 
 count(year_ago_covid_inspections_health)
 ```
